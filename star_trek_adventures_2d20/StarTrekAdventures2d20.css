@@ -206,10 +206,13 @@ button[type="roll"]:before {
     padding-left: 100px;
 }
 
-.sheet-character.sheet-topback,
-.sheet-settings.sheet-topback
+.sheet-character.sheet-topback
 {
     height: 250px;
+}
+.sheet-settings.sheet-topback
+{
+    height: 350px;
 }
 
 .sheet-starship.sheet-topback {

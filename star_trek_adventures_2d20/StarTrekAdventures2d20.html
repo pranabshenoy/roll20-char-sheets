@@ -108,6 +108,21 @@
             </div>
             <div class="sheet-col">
                 <div class="sectionheader">
+                    <span class="label">MOMENTUM</span>
+                </div>
+                <div class="sheet-row">
+                    <div class="sheet-col">
+                        <div class="attributecontainer">
+                            <span class="label">CURRENT</span><input type="text" name="attr_momentum" value="0" maxlength="2"/>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="attributecontainer">
+                            <span class="label">MAX</span><input type="text" name="attr_momentum_max" disabled="true" title="Default Value: 6" value="6" maxlength="2"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sectionheader">
                     <span class="label">STRESS</span>
                 </div>
                 <div class="sheet-row">
@@ -327,12 +342,12 @@
                 <div class="momentum" style="margin-top: 8px;">
                     <span class="label">MOMENTUM</span>
                     <span class=momentum-values>
-                        <input type="checkbox" name="attr_momentum1"/><span></span>
-                        <input type="checkbox" name="attr_momentum2"/><span></span>
-                        <input type="checkbox" name="attr_momentum3"/><span></span>
-                        <input type="checkbox" name="attr_momentum4"/><span></span>
-                        <input type="checkbox" name="attr_momentum5"/><span></span>
-                        <input type="checkbox" name="attr_momentum6"/><span></span>
+                        <input type="checkbox" name="attr_momentum_1"/><span></span>
+                        <input type="checkbox" name="attr_momentum_2"/><span></span>
+                        <input type="checkbox" name="attr_momentum_3"/><span></span>
+                        <input type="checkbox" name="attr_momentum_4"/><span></span>
+                        <input type="checkbox" name="attr_momentum_5"/><span></span>
+                        <input type="checkbox" name="attr_momentum_6"/><span></span>
                     </span>
                 </div>
                 <div class='talents'>
@@ -886,7 +901,11 @@
     on("change:stress_1 change:stress_2 change:stress_3 change:stress_4 change:stress_5 change:stress_6 change:stress_7 change:stress_8 change:stress_9 change:stress_10 change:stress_11 change:stress_12 change:stress_13 change:stress_14 change:stress_15 change:stress_16 change:stress_17 change:stress_18 change:stress_19 change:stress_20 change:stress_21 change:stress_22 change:stress_23 change:stress_24", function () {
         count_stress();
     });
-    
+
+    on("change:momentum_1 change:momentum_2 change:momentum_3 change:momentum_4 change:momentum_5 change:momentum_6", function () {
+        count_momentum();
+    });
+
     on("change:shields_1 change:shields_2 change:shields_3 change:shields_4 change:shields_5 change:shields_6 change:shields_7 change:shields_8 change:shields_9 change:shields_10 change:shields_11 change:shields_12 change:shields_13 change:shields_14 change:shields_15 change:shields_16 change:shields_17 change:shields_18 change:shields_19 change:shields_20 change:shields_21 change:shields_22 change:shields_23 change:shields_24", function () {
         count_shields();
     });
@@ -894,7 +913,11 @@
     on("change:stress" , function () {
         update_stress();
     });
-    
+
+    on("change:momentum" , function () {
+        update_momentum();
+    });
+
     on("change:shields", function () {
         update_shields();
     });
@@ -1063,7 +1086,13 @@
             setAttrs({"stress": do_checkbox_count(v)});
         });
     };
-    
+
+    var count_momentum = function() {
+        getAttrs(get_attr_list("momentum", 6), function(v) {
+            setAttrs({"momentum": do_checkbox_count(v)});
+        });
+    };
+
     var count_shields = function() {
         getAttrs(get_attr_list("shields", 24), function (v) {
             setAttrs({"shields": do_checkbox_count(v)});
@@ -1077,7 +1106,15 @@
             update_checkbox_things("stress", v);
         });
     };
-    
+
+    var update_momentum = function () {
+        var attr_list = ["momentum"];
+        attr_list = attr_list.concat(get_attr_list("momentum", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("momentum", v);
+        });
+    };
+
     var update_shields = function () {
         var attr_list = ["shields"];
         attr_list = attr_list.concat(get_attr_list("shields", 24));
