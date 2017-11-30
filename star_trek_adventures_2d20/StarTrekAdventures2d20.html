@@ -339,6 +339,7 @@
                     <div class="sectionheader">
                         <span class="label">TALENTS</span>
                     </div>
+                    <input type="hidden" name="attr_pc_talents" value="&{template:lcars}{{roll_name=@{character_name}'s Talents}}{{talent_text=@{talents}}}">
                     <textarea name="attr_talents"></textarea>
                 </div>
                 <div class='weapons'>
@@ -369,6 +370,7 @@
                     <div class="sectionheader">
                         <span class="label">FOCUSES</span>
                     </div>
+                    <input type="hidden" name="attr_pc_focuses" value="&{template:lcars}{{roll_name=@{character_name}'s Focuses}}{{talent_text=@{focuses}}}">
                     <textarea name="attr_focuses"></textarea>
                 </div>
                 <div class='stress'>
@@ -841,6 +843,16 @@
                 <td class="weapq">{{weapq}}</td>        
             </tr>
             {{/weapq}}
+            {{#talent_text}}
+            <tr>
+                <td class="talent_text">{{talent_text}}</td>
+            </tr>
+            {{/talent_text}}
+            {{#focus_text}}
+            <tr>
+                <td class="focus_text">{{focus_text}}</td>
+            </tr>
+            {{/focus_text}}
         </table>
     </rolltemplate>
 </div>
