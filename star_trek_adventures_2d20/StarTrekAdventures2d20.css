@@ -364,6 +364,26 @@ button[type="roll"]:before {
   font-weight: 100;
   font-size: 13px;
   line-height: 18px;
+  width: 67px;
+  text-align: right;
+  padding-right: 1px;
+  margin-right: 4px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.sheet-weaponscontainer .sheet-iconlabel,
+.sheet-weaponscontainer button[type="roll"],
+.sheet-attributecontainer .sheet-label
+{
+  display: inline-block;
+  float: left;
+  border: 2px solid;
+  color: white;
+  font-family: Impact;
+  font-weight: 100;
+  font-size: 13px;
+  line-height: 18px;
   width: 87px;
   text-align: right;
   padding-right: 1px;
@@ -455,6 +475,7 @@ button[type="roll"]:before {
 }
 
 .sheet-attributecontainer input[type="text"],
+.sheet-weaponscontainer select,
 .sheet-weaponscontainer input[type="text"]
 {
     border: 2px solid;
@@ -605,8 +626,11 @@ input[type="number"]:focus
   width: 40px;
 }
 
-.sheet-weaponscontainer input[type="text"] 
-{
+.sheet-weaponscontainer input[type="text"] {
+  border-color: #cc6699;
+}
+
+.sheet-weaponscontainer select {
   border-color: #cc6699;
 }
 
