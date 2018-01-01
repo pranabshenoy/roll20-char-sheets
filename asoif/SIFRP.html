@@ -97,7 +97,7 @@
                     <tbody>
                         <tr>
                             <td><input type='number' name='attr_agility' value='2'/></td>
-                            <td><button type='roll' class='sheet-ability' name='attr_agility-roll' style="width:210px;" value='/e rolls Agility [[ [[ @{agility}d6sdk[[@{agility} + @{wounds} ]] + @{injuries} ]]'>Agility</button></td>
+                            <td><button type='roll' class='sheet-ability' name='attr_agility-roll' style="width:210px;" value='/e rolls Agility [[ @{agility}d6sdk[[@{agility} + @{wounds} ]] + @{injuries} ]]'>Agility</button></td>
                             <td>
                                 <div style="width:40px;">
                                     <input type="checkbox" name="attr_agilitySpecialty_Open" class="sheet-Specialty" value="1" checked/><span></span>
@@ -337,7 +337,7 @@
                         </tr>
                         <tr>
                             <td><input type='number' name='attr_deception' value='2'/></td>
-                            <td><button type='roll' class='sheet-ability' name='attr_deception-roll' style="width:210px;" value='/e rolls deception [[ [[ @{deception}d6sdk[[@{deception} + @{wounds} ]] + @{injuries} ]]'>Deception</button></td>
+                            <td><button type='roll' class='sheet-ability' name='attr_deception-roll' style="width:210px;" value='/e rolls deception [[ @{deception}d6sdk[[@{deception} + @{wounds} ]] + @{injuries} ]]'>Deception</button></td>
                             <td>
                                 <div style="width:40px;">
                                     <input type="checkbox" name="attr_deceptionSpecialty_Open" class="sheet-Specialty" value="1" checked/><span></span>
@@ -529,7 +529,7 @@
                         </tr>
                         <tr>
                             <td><input type='number' name='attr_language' value='2'/></td>
-                            <td><button type='roll' class='sheet-ability' name='attr_language-roll' style="width:210px;" value='/e rolls Language [[ @{language}d6sd[[@{language} + @{wounds} ]] + @{injuries} ]]'>Language</button></td>
+                            <td><button type='roll' class='sheet-ability' name='attr_language-roll' style="width:210px;" value='/e rolls Language [[ @{language}d6sdk[[@{language} + @{wounds} ]] + @{injuries} ]]'>Language</button></td>
                             <td>
                                 <div style="width:40px;">
                                     <input type="checkbox" name="attr_languageSpecialty_Open" class="sheet-Specialty" value="1" checked/><span></span>
@@ -933,17 +933,17 @@
                                     <table>
                                         <tr>
                                             <td><input type='number' name='attr_warfareSpecialty1' value='0'/></td>
-                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty1" value="/e rolls warfare:@{warfareSpecialtyname1} [[ [[ @{warfare} + @{warfareSpecialtyname1} ]]d6sdk@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
+                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty1" value="/e rolls warfare:@{warfareSpecialtyname1} [[ [[ @{warfare} + @{warfareSpecialtyname1} ]]d6sdk[[@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
                                             <td><input type='text' name='attr_warfareSpecialtyname1' value=''/></td>
                                         </tr>
                                         <tr>
                                             <td><input type='number' name='attr_warfareSpecialty2' value='0'/></td>
-                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty2" value="/e rolls warfare:@{warfareSpecialtyname2} [[ [[ @{warfare} + @{warfareSpecialtyname2} ]]d6sdk@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
+                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty2" value="/e rolls warfare:@{warfareSpecialtyname2} [[ [[ @{warfare} + @{warfareSpecialtyname2} ]]d6sdk[[@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
                                             <td><input type='text' name='attr_warfareSpecialtyname2' value=''/></td>
                                         </tr>
                                         <tr>
                                             <td><input type='number' name='attr_warfareSpecialty3' value='0'/></td>
-                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty3" value="/e rolls warfare:@{warfareSpecialtyname3} [[ [[ @{warfare} + @{warfareSpecialtyname3} ]]d6sdk@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
+                                            <td><button type='roll' class="sheet-" name="roll_warfareSpecialty3" value="/e rolls warfare:@{warfareSpecialtyname3} [[ [[ @{warfare} + @{warfareSpecialtyname3} ]]d6sdk[[@{warfare} + @{wounds} ]] + @{injuries} ]]"></button></td>
                                             <td><input type='text' name='attr_warfareSpecialtyname3' value=''/></td>
                                         </tr>
                                     </table>
