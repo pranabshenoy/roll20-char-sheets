@@ -2,7 +2,18 @@
   min-width: 800px;
 }
 
-/* Circles */
+.sheet-section-header {
+  margin-bottom: 4px;
+  padding: 2px 4px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+
+/* ==== Circles ==== */
 div.sheet-circle-border {
   width: 7em;
   height: 7em;
@@ -25,7 +36,10 @@ div.sheet-circle-border {
   padding-right: 0px;
   margin-bottom: 0px;
 }
+/* ==== Circles ==== */
 
+
+/* ==== Select Styling ==== */
 select.sheet-vehicle-select,
 select.sheet-character-select {
   display: inline-block;
@@ -36,7 +50,10 @@ select.sheet-wound-status-select {
   display: inline-block;
   width: 140px;
 }
+/* ==== Select Styling ==== */
 
+
+/* ==== Checkbox styles as a lock ==== */
 /* Hide actual checkbox */
 input.sheet-vehicle-lock,
 input.sheet-character-type-lock
@@ -68,24 +85,46 @@ input.sheet-character-type-lock:checked + span::before
   content: ")";
 }
 
+/* Enable/Disable manipulation of select */
 input.sheet-vehicle-lock:not(:checked) ~ select.sheet-vehicle-select,
 input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
 {
   pointer-events: none;
 }
+/* ==== Checkbox styles as a lock ==== */
 
-.sheet-section-header {
-  margin-bottom: 4px;
-  padding: 2px 4px;
-  text-align: center;
-  background: black;
-  color: white;
-  font-weight: bold;
-  font-size: 1.5em;
+
+/* ==== Style Sheet Inputs ==== */
+input.sheet-input-short
+{
+  width: 40px !important;
+  text-align: right;
 }
 
-/* === Section Body Display === */
-.charsheet label.sheet-armor-order {
+input.sheet-input-medium
+{
+  width: 100px;
+}
+
+input.sheet-input-long
+{
+  width: 180px;
+}
+
+textarea.misc
+{
+  max-width: 180px;
+  max-height: 180px;
+  width: 180px;
+  height: 180px;
+  resize: none;
+}
+/* ==== Style Sheet Inputs ==== */
+
+
+/* ==== Style Sheet Lables ==== */
+label.sheet-armor-order
+{
   display: inline-block;
   width: 10px;
   text-align: left;
@@ -93,7 +132,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-right: 0px;
 }
 
-.charsheet label.sheet-vehicle-weapon-order {
+label.sheet-vehicle-weapon-order
+{
   display: inline-block;
   width: 10px;
   text-align: left;
@@ -102,7 +142,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   margin-right: 30px;
 }
 
-.charsheet label.sheet-weapon-attributes {
+label.sheet-weapon-attributes
+{
   display: inline-block;
   width: 40px;
   text-align: left;
@@ -110,7 +151,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-right: 0px;
 }
 
-.charsheet label.sheet-character-attributes {
+label.sheet-character-attributes
+{
   display: inline-block;
   width: 60px;
   text-align: left;
@@ -118,7 +160,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-right: 0px;
 }
 
-.charsheet label.sheet-warning-long {
+label.sheet-warning-long
+{
   display: inline-block;
   width: 180px;
   text-align: left;
@@ -127,15 +170,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-left: 15px;
 }
 
-.charsheet label.sheet-vehicle-attributes-short {
-  display: inline-block;
-  width: 40px;
-  text-align: left;
-  font-size: 0.8em;
-  padding-right: 0px;
-}
-
-.charsheet label.sheet-vehicle-attributes {
+label.sheet-vehicle-attributes
+{
   display: inline-block;
   width: 95px;
   text-align: left;
@@ -143,15 +179,8 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-right: 0px;
 }
 
-.charsheet label.sheet-skill-name {
-  display: inline-block;
-  width: 95px;
-  text-align: left;
-  font-size: 0.8em;
-  padding-right: 0px;
-}
-
-.charsheet label.sheet-vehicle-attributes-long {
+label.sheet-vehicle-attributes-long
+{
   display: inline-block;
   width: 120px;
   text-align: left;
@@ -159,43 +188,42 @@ input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
   padding-right: 0px;
 }
 
-.charsheet label.sheet-plus {
+label.sheet-vehicle-attributes-short
+{
+  display: inline-block;
+  width: 40px;
+  text-align: left;
+  font-size: 0.8em;
+  padding-right: 0px;
+}
+
+label.sheet-skill-name
+{
+  display: inline-block;
+  width: 95px;
+  text-align: left;
+  font-size: 0.8em;
+  padding-right: 0px;
+}
+
+label.sheet-plus
+{
   display: inline-block;
   width: 5px;
   text-align: center;
 }
 
-.sheet-col strong.sheet-dee {
+.sheet-col strong.sheet-dee
+{
   font-size: 1.1em;
   font-weight: bold;
   padding-left: 2px;
   padding-right: 5px;
 }
-
-.charsheet input.sheet-input-short {
-  width: 40px !important;
-  text-align: right;
-}
-
-.charsheet input.sheet-input-medium {
-  width: 100px;
-}
-
-.charsheet input.sheet-input-long {
-  width: 180px;
-}
-
-.charsheet textarea.misc {
-  max-width: 180px;
-  max-height: 180px;
-  width: 180px;
-  height: 180px;
-  resize: none;
-}
-/* === Section Body Display === */
+/* ==== Style Sheet Lables ==== */
 
 
-/* === Hide Sections === */
+/* ==== Hide Sections ==== */
 input.sheet-section-show-hide
 {
   opacity: 0;
@@ -228,4 +256,4 @@ input.sheet-section-show-hide:checked ~ div.sheet-section-body
 {
   display: none;
 }
-/* === Hide Sections === */
+/* ==== Hide Sections ==== */

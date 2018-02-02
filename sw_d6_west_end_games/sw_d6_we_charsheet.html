@@ -32,6 +32,7 @@
           <option value="wookie">Wookie</option>
           <option value="tough_native">Tough Native</option>
           <option value="custom">Custom</option>
+          <!-- ADD MORE CHARACTER TYPES HERE -->
         </select>
         <label class='sheet-warning-long'>*Do not change after character creation.</label>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
@@ -468,17 +469,17 @@
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Ship / Vehicle</h3>
 
-        <!-- <label class='sheet-vehicle-attributes-short'>Type</label></label> -->
         <input type="checkbox" class="sheet-vehicle-lock" name="attr_VehicleSelectionEnabled"/><span></span>
         <select name="attr_VehicleType" class="sheet-vehicle-select">
           <option value="">Select Ship / Vehicle</option>
+          <!-- ADD MORE VEHICLES HERE -->
           <option value="x_wing">X-Wing</option>
           <option value="y_wing">Y-Wing</option>
           <option value="tie_fighter">TIE Fighter</option>
           <option value="stock_light_freighter">Stock Light Frigate</option>
           <option value="imperial_customs_frigate">Imperial Customs Frigate</option>
+          <option value="custom">Custom</option>
         </select>
-         <!--<button value=''>Apply</button><br />-->
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-vehicle-attributes-long'>Hyperdrive Multiplier</label>
@@ -872,6 +873,13 @@
       Strength: [2, 0], Mechanical: [2, 0], Technical: [2, 0],
       Control: [0, 0], Sense: [0, 0], Alter: [0, 0]
     }
+    // Define more character types here
+    // 'key' defined here must match option 'value'
+    // key: {
+    //  Dexterity: [2, 0], Perception: [2, 0], Knowledge: [2, 0],
+    //  Strength: [2, 0], Mechanical: [2, 0], Technical: [2, 0],
+    //  Control: [0, 0], Sense: [0, 0], Alter: [0, 0]
+    // }
   };
 
   const vehicles = {
@@ -940,5 +948,33 @@
       VehicleWeapon2FireControl: [2, 0],
       VehicleWeapon2Damage: [9, 0]
     },
+    custom: {
+      HyperdriveMultiplier: 0,
+      SublightSpeed: [0, 0],
+      Maneuverability: [0, 0],
+      Hull: [0, 0],
+      Shields: [0, 0],
+      VehicleWeapon1Name: "",
+      VehicleWeapon1FireControl: [0, 0],
+      VehicleWeapon1Damage: [0, 0],
+      VehicleWeapon2Name: "",
+      VehicleWeapon2FireControl: [0, 0],
+      VehicleWeapon2Damage: [0, 0]
+    }
+    // Define more vehicles here
+    // 'key' defined here must match option 'value'
+    // key: {
+    //    HyperdriveMultiplier: 0,
+    //    SublightSpeed: [0, 0],
+    //    Maneuverability: [0, 0],
+    //    Hull: [0, 0],
+    //    Shields: [0, 0],
+    //    VehicleWeapon1Name: "",
+    //    VehicleWeapon1FireControl: [0, 0],
+    //    VehicleWeapon1Damage: [0, 0],
+    //    VehicleWeapon2Name: "",
+    //    VehicleWeapon2FireControl: [0, 0],
+    //    VehicleWeapon2Damage: [0, 0]
+    //}
   };
 </script>
