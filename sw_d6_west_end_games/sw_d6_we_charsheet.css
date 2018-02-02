@@ -257,3 +257,40 @@ input.sheet-section-show-hide:checked ~ div.sheet-section-body
   display: none;
 }
 /* ==== Hide Sections ==== */
+
+
+/* ==== Roll Template ==== */
+.sheet-rolltemplate-swd6roll table {
+  width: 100%;
+  border: 1px solid;
+  color: black;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.sheet-rolltemplate-swd6roll th {
+  background-color: rgba(112, 32, 130,1);
+  color: #ffffff;
+  padding: 2px;
+  border-bottom: 1px solid black;
+  line-height: 1.6em;
+  font-size: 1.2em;
+}
+
+.sheet-rolltemplate-swd6roll .sheet-tcat {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-swd6roll td {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-swd6roll tr:nth-child(odd) {
+  background-color: rgba(217, 217, 214,1);
+}
+
+.sheet-rolltemplate-swd6roll tr:nth-child(even) {
+  background-color: rgba(233, 233, 233,1);
+}
+/* ==== Roll Template ==== */

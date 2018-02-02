@@ -85,21 +85,25 @@
         <input type="number" name='attr_Control' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_ControlMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Control}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ControlMod}' name='roll_Control'></button><br/>
+        <input  type="hidden" name="attr_ForceControlRoll" value="&{template:swd6roll} {{roll_name= @{Name} is One With The Force}} {{skill= Control}} {{roll_value= [[ [[@{Control}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ControlMod} ]]}}">
+        <button type='roll' value="@{ForceControlRoll}" name='roll_ForceControl'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Sense</label>
         <input type="number" name='attr_Sense' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SenseMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Sense}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SenseMod}' name='roll_Sense'></button><br/>
+        <input  type="hidden" name="attr_ForceSenseRoll" value="&{template:swd6roll} {{roll_name= @{Name} is One With The Force}} {{skill= Sense}} {{roll_value= [[ [[@{Sense}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SenseMod} ]]}}">
+        <button type='roll' value="@{ForceSenseRoll}" name='roll_ForceSense'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Alter</label>
         <input type="number" name='attr_Alter' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_AlterMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Alter}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AlterMod}' name='roll_Alter'></button><br/>
+        <input  type="hidden" name="attr_ForceAlterRoll" value="&{template:swd6roll} {{roll_name= @{Name} is One With The Force}} {{skill= Alter}} {{roll_value= [[ [[@{Alter}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AlterMod} ]]}}">
+        <button type='roll' value="@{ForceAlterRoll}" name='roll_ForceAlter'></button>
+        <br/>
       </div>
 
     </div>
@@ -113,183 +117,207 @@
     <div class='sheet-3colrow'>
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Dexterity</h3>
-        <input type="hidden" name="attr_pc_dex_skills" value="?{Dice Pool|Dexterity, @{character_name}'s Dexterity skill roll [[ [[@{Dexterity}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{DexterityMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Blaster, @{character_name}'s Blaster skill roll [[ [[@{Blaster}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{BlasterMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Brawling Parry, @{character_name}'s Brawling Parry skill roll [[ [[@{BrawlingParry}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{BrawlingParryMod}-[[@{armor1mod}+@{armor2mod}]]]] ]] |Dodge, @{character_name}'s Dodge skill roll [[ [[@{Dodge}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{DodgeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Grenade, @{character_name}'s Grenade skill roll [[ [[@{Grenade}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{GrenadeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Heavy Weapons, @{character_name}'s Heavy Weapons skill roll [[ [[@{HeavyWeapons}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{HeavyWeaponsMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Melee Parry, @{character_name}'s Melee Parry skill roll [[ [[@{MeleeParry}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{MeleeParryMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]|Melee, @{character_name}'s Melee skill roll [[ [[@{Melee}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{MeleeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]}"/>
+        <input type="hidden" name="attr_pc_dex_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Dexterity, {{skill= Dexterity&amp;#125;&amp;#125; {{roll_value= [[ [[@{Dexterity}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{DexterityMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Blaster, {{skill= Blaster&amp;#125;&amp;#125; {{roll_value= [[ [[@{Blaster}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{BlasterMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Brawling Parry, {{skill= Brawling Parry&amp;#125;&amp;#125; {{roll_value= [[ [[@{BrawlingParry}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{BrawlingParryMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Dodge, {{skill= Dodge&amp;#125;&amp;#125; {{roll_value= [[ [[@{Dodge}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{DodgeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Grenade, {{skill= Grenade&amp;#125;&amp;#125; {{roll_value= [[ [[@{Grenade}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{GrenadeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Heavy Weapons, {{skill= Heavy Weapons&amp;#125;&amp;#125; {{roll_value= [[ [[@{HeavyWeapons}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{HeavyWeaponsMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Melee Parry, {{skill= Melee Parry&amp;#125;&amp;#125; {{roll_value= [[ [[@{MeleeParry}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{MeleeParryMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;|Melee, {{skill= Melee&amp;#125;&amp;#125; {{roll_value= [[ [[@{Melee}-[[ ?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125; ]]-[[@{armor1}+@{armor2}]]]]d6+[[@{MeleeMod}-[[@{armor1mod}+@{armor2mod}]]]] ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Dexterity' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_DexterityMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Dexterity}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{DexterityMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_Dexterity'></button><br/>
+        <input  type="hidden" name="attr_DexterityRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Dexterity}} {{roll_value= [[ [[@{Dexterity}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{DexterityMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{DexterityRoll}" name='roll_Dexterity'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Blaster</label>
         <input type="number" name='attr_Blaster' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BlasterMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Blaster}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{BlasterMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_Blaster'></button><br/>
+        <input  type="hidden" name="attr_BlasterRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Blaster}} {{roll_value= [[[[@{Blaster}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{BlasterMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]]]}}">
+        <button type='roll' value="@{BlasterRoll}" name='roll_Blaster'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Brawling Parry</label>
         <input type="number" name='attr_BrawlingParry' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BrawlingParryMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{BrawlingParry}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{BrawlingParryMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_BrawlingParry'></button><br/>
+        <input  type="hidden" name="attr_BrawlingParryRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Brawling Parry}} {{roll_value= [[ [[@{BrawlingParry}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{BrawlingParryMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{BrawlingParryRoll}" name='roll_BrawlingParry'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Dodge</label>
         <input type="number" name='attr_Dodge' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_DodgeMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Dodge}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{DodgeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_Dodge'></button><br/>
+        <input  type="hidden" name="attr_DodgeRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Dodge}} {{roll_value= [[ [[@{Dodge}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{DodgeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{DodgeRoll}" name='roll_Dodge'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Grenade</label>
         <input type="number" name='attr_Grenade' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_GrenadeMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Grenade}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{GrenadeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_Grenade'></button><br/>
+        <input  type="hidden" name="attr_GrenadeRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Grenade}} {{roll_value= [[ [[@{Grenade}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{GrenadeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{GrenadeRoll}" name='roll_Grenade'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Heavy Weapons</label>
         <input type="number" name='attr_HeavyWeapons' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_HeavyWeaponsMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{HeavyWeapons}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{HeavyWeaponsMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_HeavyWeapons'></button><br/>
+        <input  type="hidden" name="attr_HeavyWeaponsRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Heavy Weapons}} {{roll_value= [[ [[@{HeavyWeapons}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{HeavyWeaponsMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{HeavyWeaponsRoll}" name='roll_HeavyWeapons'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Melee</label>
         <input type="number" name='attr_Melee' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_MeleeMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Melee}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{MeleeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_Melee'></button><br/>
+        <input  type="hidden" name="attr_MeleeRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Melee}} {{roll_value= [[ [[@{Melee}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{MeleeMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{MeleeRoll}" name='roll_Melee'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Melee Parry</label>
         <input type="number" name='attr_MeleeParry' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_MeleeParryMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{MeleeParry}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{MeleeParryMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]]' name='roll_MeleeParry'></button><br/>
+        <input  type="hidden" name="attr_MeleeParryRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Melee Parry}} {{roll_value= [[ [[@{MeleeParry}-[[ ?{Penalty?|0|1|2|3|4|5} ]]-[[@{Armor1}+@{Armor2}]]]]d6+[[@{MeleeParryMod}-[[@{Armor1Mod}+@{Armor2Mod}]]]] ]]}}">
+        <button type='roll' value="@{MeleeParryRoll}" name='roll_MeleeParry'></button><br/>
       </div>
 
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Perception</h3>
-        <input type="hidden" name="attr_pc_perception_skills" value="?{Dice Pool|Perception, @{character_name}'s Perception skill roll [[ [[@{Perception}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{PerceptionMod} ]]|Bargain, @{character_name}'s Bargain skill roll [[ [[@{Bargain}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BargainMod} ]]|Command, @{character_name}'s Command skill roll [[ [[@{Command}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CommandMod} ]]|Con, @{character_name}'s Con skill roll [[ [[@{Con}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ConMod} ]]|Gambling, @{character_name}'s Gambling skill roll [[ [[@{Gambling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{GamblingMod} ]]|Hide/Sneak, @{character_name}'s Hide/Sneak skill roll [[ [[@{HideSneak}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{HideSneakMod} ]]|Search, @{character_name}'s Search skill roll [[ [[@{Search}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SearchMod} ]]}"/>
+        <input type="hidden" name="attr_pc_perception_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Perception, {{skill= Perception&amp;#125;&amp;#125; {{roll_value= [[ [[@{Perception}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{PerceptionMod} ]]&amp;#125;&amp;#125;|Bargain, {{skill= Bargain&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bargain}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BargainMod} ]]&amp;#125;&amp;#125;|Command, {{skill= Command&amp;#125;&amp;#125; {{roll_value= [[ [[@{Command}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CommandMod} ]]&amp;#125;&amp;#125;|Con, {{skill= Con&amp;#125;&amp;#125; {{roll_value= [[ [[@{Con}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ConMod} ]]&amp;#125;&amp;#125;|Gambling, {{skill= Gambling&amp;#125;&amp;#125; {{roll_value= [[ [[@{Gambling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{GamblingMod} ]]&amp;#125;&amp;#125;|Hide/Sneak, {{skill= Hide/Sneak&amp;#125;&amp;#125; {{roll_value= [[ [[@{HideSneak}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{HideSneakMod} ]]&amp;#125;&amp;#125;|Search, {{skill= Search&amp;#125;&amp;#125; {{roll_value= [[ [[@{Search}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SearchMod} ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Perception' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_PerceptionMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Perception}-?{Penalty?|0|1|2|3|4|5}]]d6+@{PerceptionMod}' name='roll_Perception'></button><br/>
+        <input  type="hidden" name="attr_PerceptionRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Perception}} {{roll_value= [[ [[@{Perception}-?{Penalty?|0|1|2|3|4|5}]]d6+@{PerceptionMod} ]]}}">
+        <button type='roll' value="@{PerceptionRoll}" name='roll_Perception'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Bargain</label>
         <input type="number" name='attr_Bargain' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BargainMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Bargain}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BargainMod}' name='roll_Bargain'></button><br/>
+        <input  type="hidden" name="attr_BargainRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Bargain}} {{roll_value= [[ [[@{Bargain}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BargainMod} ]]}}">
+        <button type='roll' value="@{BargainRoll}" name='roll_Bargain'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Command</label>
         <input type="number" name='attr_Command' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_CommandMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Command}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CommandMod}' name='roll_Command'></button><br/>
+        <input  type="hidden" name="attr_CommandRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Command}} {{roll_value= [[ [[@{Command}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CommandMod} ]]}}">
+        <button type='roll' value="@{CommandRoll}" name='roll_Command'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Con</label>
         <input type="number" name='attr_Con' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_ConMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Con}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ConMod}' name='roll_Con'></button><br/>
+        <input  type="hidden" name="attr_ConRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Con}} {{roll_value= [[ [[@{Con}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ConMod} ]]}}">
+        <button type='roll' value="@{ConRoll}" name='roll_Con'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Gambling</label>
         <input type="number" name='attr_Gambling' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_GamblingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Gambling}-?{Penalty?|0|1|2|3|4|5}]]d6+@{GamblingMod}' name='roll_Gambling'></button><br/>
+        <input  type="hidden" name="attr_GamblingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Gambling}} {{roll_value= [[ [[@{Gambling}-?{Penalty?|0|1|2|3|4|5}]]d6+@{GamblingMod} ]]}}">
+        <button type='roll' value="@{GamblingRoll}" name='roll_Gambling'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Hide/Sneak</label>
         <input type="number" name='attr_HideSneak' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_HideSneakMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{HideSneak}-?{Penalty?|0|1|2|3|4|5}]]d6+@{HideSneakMod}' name='roll_HideSneak'></button><br/>
+        <input  type="hidden" name="attr_HideSneakRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Hide/Sneak}} {{roll_value= [[ [[@{HideSneak}-?{Penalty?|0|1|2|3|4|5}]]d6+@{HideSneakMod} ]]}}">
+        <button type='roll' value="@{HideSneakRoll}" name='roll_HideSneak'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Search</label>
         <input type="number" name='attr_Search' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SearchMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Search}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SearchMod}' name='roll_Search'></button><br/>
+        <input  type="hidden" name="attr_SearchRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Search}} {{roll_value= [[ [[@{Search}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SearchMod} ]]}}">
+        <button type='roll' value="@{SearchRoll}" name='roll_Search'></button><br/>
 
       </div>
 
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Knowledge</h3>
-        <input type="hidden" name="attr_pc_knowledge_skills" value="?{Dice Pool|Knowledge, @{character_name}'s Knowledge skill roll [[ [[@{Knowledge}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{KnowledgeMod} ]]|Alien Races, @{character_name}'s Alien Races skill roll [[ [[@{AlienRaces}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AlienRacesMod} ]]|Bureaucracy, @{character_name}'s Bureaucracy skill roll [[ [[@{Bureaucracy}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BureaucracyMod} ]]|Cultures, @{character_name}'s Cultures skill roll [[ [[@{Cultures}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CulturesMod} ]]|Languages, @{character_name}'s Languages skill roll [[ [[@{Languages}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{LanguagesMod} ]]|Planetary Systems, @{character_name}'s Planetary Systems skill roll [[ [[@{PlanetarySystems}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{PlanetarySystemsMod} ]]|Streetwise, @{character_name}'s Streetwise skill roll [[ [[@{Streetwise}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StreetwiseMod} ]]|Survival, @{character_name}'s Survival skill roll [[ [[@{Survival}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SurvivalMod} ]]}"/>
+        <input type="hidden" name="attr_pc_knowledge_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Knowledge, {{skill= Knowledge&amp;#125;&amp;#125; {{roll_value= [[ [[@{Knowledge}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{KnowledgeMod} ]]&amp;#125;&amp;#125;|Alien Races, {{skill= Alien Races&amp;#125;&amp;#125; {{roll_value= [[ [[@{AlienRaces}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AlienRacesMod} ]]&amp;#125;&amp;#125;|Bureaucracy, {{skill= Bureaucracy&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bureaucracy}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BureaucracyMod} ]]&amp;#125;&amp;#125;|Cultures, {{skill= Cultures&amp;#125;&amp;#125; {{roll_value= [[ [[@{Cultures}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CulturesMod} ]]&amp;#125;&amp;#125;|Languages, {{skill= Languages&amp;#125;&amp;#125; {{roll_value= [[ [[@{Languages}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{LanguagesMod} ]]&amp;#125;&amp;#125;|Planetary Systems, {{skill= Planetary Systems&amp;#125;&amp;#125; {{roll_value= [[ [[@{PlanetarySystems}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{PlanetarySystemsMod} ]]&amp;#125;&amp;#125;|Streetwise, {{skill= Streetwise&amp;#125;&amp;#125; {{roll_value= [[ [[@{Streetwise}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StreetwiseMod} ]]&amp;#125;&amp;#125;|Survival, {{skill= Survival&amp;#125;&amp;#125; {{roll_value= [[ [[@{Survival}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SurvivalMod} ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Knowledge' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_KnowledgeMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Knowledge}-?{Penalty?|0|1|2|3|4|5}]]d6+@{KnowledgeMod}' name='roll_Knowledge'></button><br/>
+        <input  type="hidden" name="attr_KnowledgeRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Knowledge}} {{roll_value= [[ [[@{Knowledge}-?{Penalty?|0|1|2|3|4|5}]]d6+@{KnowledgeMod} ]]}}">
+        <button type='roll' value="@{KnowledgeRoll}" name='roll_Knowledge'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Alien Races</label>
         <input type="number" name='attr_AlienRaces' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_AlienRacesMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{AlienRaces}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AlienRacesMod}' name='roll_AlienRaces'></button><br/>
+        <input  type="hidden" name="attr_AlienRacesRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Alien Races}} {{roll_value= [[ [[@{AlienRaces}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AlienRacesMod} ]]}}">
+        <button type='roll' value="@{AlienRacesRoll}" name='roll_AlienRaces'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Bureaucracy</label>
         <input type="number" name='attr_Bureaucracy' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BureaucracyMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Bureaucracy}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BureaucracyMod}' name='roll_Bureaucracy'></button><br/>
+        <input  type="hidden" name="attr_BureaucracyRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Bureaucracy}} {{roll_value= [[ [[@{Bureaucracy}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BureaucracyMod} ]]}}">
+        <button type='roll' value="@{BureaucracyRoll}" name='roll_Bureaucracy'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Cultures</label>
         <input type="number" name='attr_Cultures' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_CulturesMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Cultures}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CulturesMod}' name='roll_Cultures'></button><br/>
+        <input  type="hidden" name="attr_CulturesRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Cultures}} {{roll_value= [[ [[@{Cultures}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CulturesMod} ]]}}">
+        <button type='roll' value="@{CulturesRoll}" name='roll_Cultures'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Languages</label>
         <input type="number" name='attr_Languages' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_LanguagesMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Languages}-?{Penalty?|0|1|2|3|4|5}]]d6+@{LanguagesMod}' name='roll_Languages'></button><br/>
+        <input  type="hidden" name="attr_LanguagesRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Languages}} {{roll_value= [[ [[@{Languages}-?{Penalty?|0|1|2|3|4|5}]]d6+@{LanguagesMod} ]]}}">
+        <button type='roll' value="@{LanguagesRoll}" name='roll_Languages'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Planetary Systems</label>
         <input type="number" name='attr_PlanetarySystems' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_PlanetarySystemsMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{PlanetarySystems}-?{Penalty?|0|1|2|3|4|5}]]d6+@{PlanetarySystemsMod}' name='roll_PlanetarySystems'></button><br/>
+        <input  type="hidden" name="attr_PlanetarySystemsRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Planetary Systems}} {{roll_value= [[ [[@{PlanetarySystems}-?{Penalty?|0|1|2|3|4|5}]]d6+@{PlanetarySystemsMod} ]]}}">
+        <button type='roll' value="@{PlanetarySystemsRoll}" name='roll_PlanetarySystems'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Streetwise</label>
         <input type="number" name='attr_Streetwise' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StreetwiseMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Streetwise}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StreetwiseMod}' name='roll_Streetwise'></button><br/>
+        <input  type="hidden" name="attr_StreetwiseRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Streetwise}} {{roll_value= [[ [[@{Streetwise}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StreetwiseMod} ]]}}">
+        <button type='roll' value="@{StreetwiseRoll}" name='roll_Streetwise'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Survival</label>
         <input type="number" name='attr_Survival' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SurvivalMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Survival}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SurvivalMod}' name='roll_Survival'></button><br/>
+        <input  type="hidden" name="attr_SurvivalRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Survival}} {{roll_value= [[ [[@{Survival}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SurvivalMod} ]]}}">
+        <button type='roll' value="@{SurvivalRoll}" name='roll_Survival'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Technology</label>
         <input type="number" name='attr_Technology' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_TechnologyMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Technology}-?{Penalty?|0|1|2|3|4|5}]]d6+@{TechnologyMod}' name='roll_Technology'></button><br/>
+        <input  type="hidden" name="attr_TechnologyRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Technology}} {{roll_value= [[ [[@{Technology}-?{Penalty?|0|1|2|3|4|5}]]d6+@{TechnologyMod} ]]}}">
+        <button type='roll' value="@{TechnologyRoll}" name='roll_Technology'></button><br/>
 
       </div>
     </div>
@@ -299,163 +327,184 @@
     <div class='sheet-3colrow'>
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Strength</h3>
-        <input type="hidden" name="attr_pc_strength_skills" value="?{Dice Pool|Strength, @{character_name}'s Strength skill roll [[ [[@{Strength}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StrengthMod} ]]|Brawling, @{character_name}'s Brawling skill roll [[ [[@{Brawling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BrawlingMod} ]]|Climbing/Jumping, @{character_name}'s Climbing/Jumping skill roll [[ [[@{ClimbingJumping}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ClimbingJumpingMod} ]]|Lifting, @{character_name}'s Lifting skill roll [[ [[@{Lifting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{LiftingMod} ]]|Stamina, @{character_name}'s Stamina skill roll [[ [[@{Stamina}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StaminaMod} ]]|Swimming, @{character_name}'s Swimming skill roll [[ [[@{Swimming}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SwimmingMod} ]]}"/>
+        <input type="hidden" name="attr_pc_strength_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Strength, {{skill= Strength&amp;#125;&amp;#125; {{roll_value= [[ [[@{Strength}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StrengthMod} ]]&amp;#125;&amp;#125;|Brawling, {{skill= Brawling&amp;#125;&amp;#125; {{roll_value= [[ [[@{Brawling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BrawlingMod} ]]&amp;#125;&amp;#125;|Climbing/Jumping, {{skill= Climbing/Jumping&amp;#125;&amp;#125; {{roll_value= [[ [[@{ClimbingJumping}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ClimbingJumpingMod} ]]&amp;#125;&amp;#125;|Lifting, {{skill= Lifting&amp;#125;&amp;#125; {{roll_value= [[ [[@{Lifting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{LiftingMod} ]]&amp;#125;&amp;#125;|Stamina, {{skill= Stamina&amp;#125;&amp;#125; {{roll_value= [[ [[@{Stamina}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StaminaMod} ]]&amp;#125;&amp;#125;|Swimming, {{skill= Stamina&amp;#125;&amp;#125; {{roll_value= [[ [[@{Swimming}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SwimmingMod} ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Strength' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StrengthMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Strength}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StrengthMod}' name='roll_Strength'></button><br/>
+        <input  type="hidden" name="attr_StrengthRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Strength}} {{roll_value= [[ [[@{Strength}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StrengthMod} ]]}}">
+        <button type='roll' value="@{StrengthRoll}" name='roll_Strength'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Brawling</label>
         <input type="number" name='attr_Brawling' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BrawlingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Brawling}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BrawlingMod}' name='roll_Brawling'></button><br/>
+        <input  type="hidden" name="attr_BrawlingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Brawling}} {{roll_value= [[ [[@{Brawling}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BrawlingMod} ]]}}">
+        <button type='roll' value="@{BrawlingRoll}" name='roll_Brawling'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Climbing/Jumping</label>
         <input type="number" name='attr_ClimbingJumping' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_ClimbingJumpingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{ClimbingJumping}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ClimbingJumpingMod}' name='roll_ClimbingJumping'></button><br/>
+        <input  type="hidden" name="attr_ClimbingJumpingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Climbing/Jumping}} {{roll_value= [[ [[@{ClimbingJumping}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ClimbingJumpingMod} ]]}}">
+        <button type='roll' value="@{ClimbingJumpingRoll}" name='roll_ClimbingJumping'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Lifting</label>
         <input type="number" name='attr_Lifting' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_LiftingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Lifting}-?{Penalty?|0|1|2|3|4|5}]]d6+@{LiftingMod}' name='roll_Lifting'></button><br/>
+        <input  type="hidden" name="attr_LiftingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Lifting}} {{roll_value= [[ [[@{Lifting}-?{Penalty?|0|1|2|3|4|5}]]d6+@{LiftingMod} ]]}}">
+        <button type='roll' value="@{LiftingRoll}" name='roll_Lifting'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Stamina</label>
         <input type="number" name='attr_Stamina' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StaminaMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Stamina}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StaminaMod}' name='roll_Stamina'></button><br/>
+        <input  type="hidden" name="attr_StaminaRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Stamina}} {{roll_value= [[ [[@{Stamina}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StaminaMod} ]]}}">
+        <button type='roll' value="@{StaminaRoll}" name='roll_Stamina'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Swimming</label>
         <input type="number" name='attr_Swimming' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SwimmingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Swimming}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SwimmingMod}' name='roll_Swimming'></button><br/>
+        <input  type="hidden" name="attr_SwimmingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Swimming}} {{roll_value= [[ [[@{Swimming}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SwimmingMod} ]]}}">
+        <button type='roll' value="@{SwimmingRoll}" name='roll_Swimming'></button><br/>
 
       </div>
 
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Mechanical</h3>
-        <input type="hidden" name="attr_pc_mechanical_skills" value="?{Dice Pool|Mechanical, @{character_name}'s Mechanical skill roll [[ [[@{Mechanical}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{MechanicalMod} ]]|Astrogation, @{character_name}'s Astrogation skill roll [[ [[@{Astrogation}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AstrogationMod} ]]|Beast Riding, @{character_name}'s Beast Riding skill roll [[ [[@{BeastRiding}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BeastRidingMod} ]]|Repulsor Lift Op, @{character_name}'s Repulsor Lift Op skill roll [[ [[@{RepulsorliftOp}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{RepulsorliftOpMod} ]]|Starship Gunnery, @{character_name}'s Starship Gunnery skill roll [[ [[@{StarshipGunnery}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipGunneryMod} ]]|Starship Piloting, @{character_name}'s Starship Piloting skill roll [[ [[@{StarshipPiloting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipPilotingMod} ]]|Starship Shields, @{character_name}'s Starship Shields skill roll [[ [[@{StarshipShields}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipShieldsMod} ]]}"/>
+        <input type="hidden" name="attr_pc_mechanical_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Mechanical, {{skill= Mechanical&amp;#125;&amp;#125; {{roll_value= [[ [[@{Mechanical}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{MechanicalMod} ]]&amp;#125;&amp;#125;|Astrogation, {{skill= Astrogation&amp;#125;&amp;#125; {{roll_value= [[ [[@{Astrogation}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AstrogationMod} ]]&amp;#125;&amp;#125;|Beast Riding, {{skill= Beast Riding&amp;#125;&amp;#125; {{roll_value= [[ [[@{BeastRiding}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BeastRidingMod} ]]&amp;#125;&amp;#125;|Repulsor Lift Op, {{skill= Repulsor Lift Op&amp;#125;&amp;#125; {{roll_value= [[ [[@{RepulsorliftOp}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{RepulsorliftOpMod} ]]&amp;#125;&amp;#125;|Starship Gunnery, {{skill= Starship Gunnery&amp;#125;&amp;#125; {{roll_value= [[ [[@{StarshipGunnery}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipGunneryMod} ]]&amp;#125;&amp;#125;|Starship Piloting, {{skill= Starship Piloting&amp;#125;&amp;#125; {{roll_value= [[ [[@{StarshipPiloting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipPilotingMod} ]]&amp;#125;&amp;#125;|Starship Shields, {{skill= Starship Shields&amp;#125;&amp;#125; {{roll_value= [[ [[@{StarshipShields}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipShieldsMod} ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Mechanical' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_MechanicalMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Mechanical}-?{Penalty?|0|1|2|3|4|5}]]d6+@{MechanicalMod}' name='roll_Mechanical'></button><br/>
+        <input  type="hidden" name="attr_MechanicalRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Mechanical}} {{roll_value= [[ [[@{Mechanical}-?{Penalty?|0|1|2|3|4|5}]]d6+@{MechanicalMod} ]]}}">
+        <button type='roll' value="@{MechanicalRoll}" name='roll_Mechanical'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Astrogation</label>
         <input type="number" name='attr_Astrogation' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_AstrogationMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Astrogation}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AstrogationMod}' name='roll_Astrogation'></button><br/>
+        <input  type="hidden" name="attr_AstrogationRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Astrogation}} {{roll_value= [[ [[@{Astrogation}-?{Penalty?|0|1|2|3|4|5}]]d6+@{AstrogationMod} ]]}}">
+        <button type='roll' value="@{AstrogationRoll}" name='roll_Astrogation'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Beast Riding</label>
         <input type="number" name='attr_BeastRiding' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_BeastRidingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{BeastRiding}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BeastRidingMod}' name='roll_BeastRiding'></button><br/>
+        <input  type="hidden" name="attr_BeastRidingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Beast Riding}} {{roll_value= [[ [[@{BeastRiding}-?{Penalty?|0|1|2|3|4|5}]]d6+@{BeastRidingMod} ]]}}">
+        <button type='roll' value="@{BeastRidingRoll}" name='roll_BeastRiding'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Repulsorlift Op</label>
         <input type="number" name='attr_RepulsorliftOp' class='sheet-input-short' value="2" value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_RepulsorliftOpMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{RepulsorliftOp}-?{Penalty?|0|1|2|3|4|5}]]d6+@{RepulsorliftOpMod}' name='roll_RepulsorliftOp'></button><br/>
+        <input  type="hidden" name="attr_RepulsorliftOpRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Repulsorlift Op}} {{roll_value= [[ [[@{RepulsorliftOp}-?{Penalty?|0|1|2|3|4|5}]]d6+@{RepulsorliftOpMod} ]]}}">
+        <button type='roll' value="@{RepulsorliftOpRoll}" name='roll_RepulsorliftOp'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Starship Gunnery</label>
         <input type="number" name='attr_StarshipGunnery' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StarshipGunneryMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{StarshipGunnery}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipGunneryMod}' name='roll_StarshipGunnery'></button><br/>
+        <input  type="hidden" name="attr_StarshipGunneryRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Starship Gunnery}} {{roll_value= [[ [[@{StarshipGunnery}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipGunneryMod} ]]}}">
+        <button type='roll' value="@{StarshipGunneryRoll}" name='roll_StarshipGunnery'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Starship Piloting</label>
         <input type="number" name='attr_StarshipPiloting' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StarshipPilotingMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{StarshipPiloting}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipPilotingMod}' name='roll_StarshipPiloting'></button><br/>
+        <input  type="hidden" name="attr_StarshipPilotingRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Starship Piloting}} {{roll_value= [[ [[@{StarshipPiloting}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipPilotingMod} ]]}}">
+        <button type='roll' value="@{StarshipPilotingRoll}" name='roll_StarshipPiloting'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Starship Shields</label>
         <input type="number" name='attr_StarshipShields' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StarshipShieldsMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{StarshipShields}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipShieldsMod}' name='roll_StarshipShields'></button><br/>
+        <input  type="hidden" name="attr_StarshipShieldsRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Starship Shields}} {{roll_value= [[ [[@{StarshipShields}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipShieldsMod} ]]}}">
+        <button type='roll' value="@{StarshipShieldsRoll}" name='roll_StarshipShields'></button><br/>
 
       </div>
 
       <div class='sheet-col'>
         <h3 style="margin-bottom: 10px;text-align: center;">Technical</h3>
-        <input type="hidden" name="attr_pc_technical_skills" value="?{Dice Pool|Technical, @{character_name}'s Technical skill roll [[ [[@{Technical}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{TechnicalMod} ]]|Computer Program/Repair, @{character_name}'s Computer Program/Repair skill roll [[ [[@{CompProgRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CompProgRepairMod} ]]|Demolition, @{character_name}'s Demolition skill roll [[ [[@{Demolition}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DemolitionMod} ]]|Droid Program/Repair, @{character_name}'s Droid Program/Repair skill roll [[ [[@{DroidProgRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DroidProgRepairMod} ]]|Medicine, @{character_name}'s Medicine skill roll [[ [[@{Medicine}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{MedicineMod} ]]|Repulsor Lift Repair, @{character_name}'s Repulsor Lift Repair skill roll [[ [[@{RepulsorliftRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{RepulsorliftRepairMod} ]]|Security, @{character_name}'s Security skill roll [[ [[@{Security}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SecurityMod} ]]|Starship Repair, @{character_name}'s Starship Repair skill roll [[ [[@{StarshipRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipRepairMod} ]]}"/>
+        <input type="hidden" name="attr_pc_technical_skills" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Technical, {{skill= Technical&amp;#125;&amp;#125; {{roll_value= [[ [[@{Technical}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{TechnicalMod} ]]&amp;#125;&amp;#125;|Computer Program/Repair, {{skill= Computer Program/Repair&amp;#125;&amp;#125; {{roll_value= [[ [[@{CompProgRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CompProgRepairMod} ]]&amp;#125;&amp;#125;|Demolition, {{skill= Demolition&amp;#125;&amp;#125; {{roll_value= [[ [[@{Demolition}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DemolitionMod} ]]&amp;#125;&amp;#125;|Droid Program/Repair, {{skill= Droid Program/Repair&amp;#125;&amp;#125; {{roll_value= [[ [[@{DroidProgRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DroidProgRepairMod} ]]&amp;#125;&amp;#125;|Medicine, {{skill= Medicine&amp;#125;&amp;#125; {{roll_value= [[ [[@{Medicine}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{MedicineMod} ]]&amp;#125;&amp;#125;|Repulsor Lift Repair, {{skill= Repulsor Lift Repair&amp;#125;&amp;#125; {{roll_value= [[ [[@{RepulsorliftRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{RepulsorliftRepairMod} ]]&amp;#125;&amp;#125;|Security, {{skill= Security&amp;#125;&amp;#125; {{roll_value= [[ [[@{Security}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SecurityMod} ]]&amp;#125;&amp;#125;|Starship Repair, {{skill= Starship Repair&amp;#125;&amp;#125; {{roll_value= [[ [[@{StarshipRepair}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipRepairMod} ]]&amp;#125;&amp;#125;}"/>
 
         <label class='sheet-skill-name'>Base</label>
         <input type="number" name='attr_Technical' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_TechnicalMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Technical}-?{Penalty?|0|1|2|3|4|5}]]d6+@{TechnicalMod}' name='roll_Technical'></button><br/>
+        <input  type="hidden" name="attr_TechnicalRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Technical}} {{roll_value= [[ [[@{Technical}-?{Penalty?|0|1|2|3|4|5}]]d6+@{TechnicalMod} ]]}}">
+        <button type='roll' value="@{TechnicalRoll}" name='roll_Technical'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Comp Prog/Repair</label>
         <input type="number" name='attr_CompProgRepair' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_CompProgRepairMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{CompProgRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CompProgRepairMod}' name='roll_CompProgRepair'></button><br/>
+        <input  type="hidden" name="attr_CompProgRepairRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Comp Prog/Repair}} {{roll_value= [[ [[@{CompProgRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{CompProgRepairMod} ]]}}">
+        <button type='roll' value="@{CompProgRepairRoll}" name='roll_CompProgRepair'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Demolition</label>
         <input type="number" name='attr_Demolition' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_DemolitionMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Demolition}-?{Penalty?|0|1|2|3|4|5}]]d6+@{DemolitionMod}' name='roll_Demolition'></button><br/>
+        <input  type="hidden" name="attr_DemolitionRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Demolition}} {{roll_value= [[ [[@{Demolition}-?{Penalty?|0|1|2|3|4|5}]]d6+@{DemolitionMod} ]]}}">
+        <button type='roll' value="@{DemolitionRoll}" name='roll_Demolition'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Droid Prog/Repair</label>
         <input type="number" name='attr_DroidProgRepair' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_DroidProgRepairMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{DroidProgRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{DroidProgRepairMod}' name='roll_DroidProgRepair'></button><br/>
+        <input  type="hidden" name="attr_DroidProgRepairRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Droid Prog/Repair}} {{roll_value= [[ [[@{DroidProgRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{DroidProgRepairMod} ]]}}">
+        <button type='roll' value="@{DroidProgRepairRoll}" name='roll_DroidProgRepair'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Medicine</label>
         <input type="number" name='attr_Medicine' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_MedicineMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Medicine}-?{Penalty?|0|1|2|3|4|5}]]d6+@{MedicineMod}' name='roll_Medicine'></button><br/>
+        <input  type="hidden" name="attr_MedicineRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Medicine}} {{roll_value= [[ [[@{Medicine}-?{Penalty?|0|1|2|3|4|5}]]d6+@{MedicineMod} ]]}}">
+        <button type='roll' value="@{MedicineRoll}" name='roll_Medicine'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Repulsorlift Repair</label>
         <input type="number" name='attr_RepulsorliftRepair' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_RepulsorliftRepairMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{RepulsorliftRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{RepulsorliftRepairMod}' name='roll_RepulsorliftRepair'></button><br/>
+        <input  type="hidden" name="attr_RepulsorliftRepairRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Repulsorlift Repair}} {{roll_value= [[ [[@{RepulsorliftRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{RepulsorliftRepairMod} ]]}}">
+        <button type='roll' value="@{RepulsorliftRepairRoll}" name='roll_RepulsorliftRepair'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Security</label>
         <input type="number" name='attr_Security' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SecurityMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Security}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SecurityMod}' name='roll_Security'></button><br/>
+        <input  type="hidden" name="attr_SecurityRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Security}} {{roll_value= [[ [[@{Security}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SecurityMod} ]]}}">
+        <button type='roll' value="@{SecurityRoll}" name='roll_Security'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-skill-name'>Starship Repair</label>
         <input type="number" name='attr_StarshipRepair' class='sheet-input-short' value="2"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_StarshipRepairMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{StarshipRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipRepairMod}' name='roll_StarshipRepair'></button><br/>
+        <input  type="hidden" name="attr_StarshipRepairRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Starship Repair}} {{roll_value= [[ [[@{StarshipRepair}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipRepairMod} ]]}}">
+        <button type='roll' value="@{StarshipRepairRoll}" name='roll_StarshipRepair'></button><br/>
       </div>
     </div>
   </div>
@@ -482,6 +531,8 @@
         </select>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
+        <input type="hidden" name="attr_vehicle_roll" value="&{template:swd6roll} {{roll_name= @{Name}'s vehicle actions }} ?{Vehicle Actions|Speed, {{vehicle_action= Speed&amp;#125;&amp;#125; {{roll_value= [[ [[@{SublightSpeed}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SublightSpeedMod} ]]&amp;#125;&amp;#125;|Piloting, {{vehicle_action= Piloting&amp;#125;&amp;#125; {{roll_value= [[ [[@{SublightSpeed}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{SublightSpeedMod} + [[@{StarshipPiloting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipPilotingMod} ]]&amp;#125;&amp;#125;|Evade, {{vehicle_action= Evade&amp;#125;&amp;#125; {{roll_value= [[ [[@{Maneuverability}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ManeuverabilityMod} + [[@{StarshipPiloting}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipPilotingMod} ]]&amp;#125;&amp;#125;|Shields, {{vehicle_action= Shields&amp;#125;&amp;#125; {{roll_value= [[ [[@{Shields}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ShieldsMod} + [[@{StarshipShields}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipShieldsMod} ]]&amp;#125;&amp;#125;|Hull, {{vehicle_action= Hull&amp;#125;&amp;#125; {{roll_value= [[ [[@{Hull}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{HullMod} ]]&amp;#125;&amp;#125;|Vehicle Weapon 1, {{vehicle_action= Fire Vehicle Weapon 1&amp;#125;&amp;#125; {{weapon_name= @{VehicleWeapon1Name}&amp;#125;&amp;#125; {{roll_value= [[ [[@{VehicleWeapon1FireControl}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{VehicleWeapon1FireControlMod} + [[@{StarshipGunnery}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipGunneryMod} ]]&amp;#125;&amp;#125; {{damage= [[ @{VehicleWeapon1Damage}d6+@{VehicleWeapon1DamageMod} ]]&amp;#125;&amp;#125;|Vehicle Weapon 2, {{vehicle_action= Fire Vehicle Weapon 2&amp;#125;&amp;#125; {{weapon_name= @{VehicleWeapon2Name}&amp;#125;&amp;#125; {{roll_value= [[ [[@{VehicleWeapon2FireControl}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{VehicleWeapon2FireControlMod} + [[@{StarshipGunnery}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{StarshipGunneryMod} ]]&amp;#125;&amp;#125; {{damage= [[ @{VehicleWeapon2Damage}d6+@{VehicleWeapon2DamageMod} ]]&amp;#125;&amp;#125;}"/>
+
         <label class='sheet-vehicle-attributes-long'>Hyperdrive Multiplier</label>
         <input type="text" name="attr_HyperdriveMultiplier"  class='sheet-input-medium'/><br />
         <hr style="margin-top: 3px; margin-bottom: 10px;">
@@ -490,28 +541,32 @@
         <input type="number" name='attr_SublightSpeed' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_SublightSpeedMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{SublightSpeed}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SublightSpeedMod}' name='roll_SublightSpeed'></button><br/>
+        <input  type="hidden" name="attr_SublightSpeedRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Sublight Speed}} {{roll_value= [[ [[@{SublightSpeed}-?{Penalty?|0|1|2|3|4|5}]]d6+@{SublightSpeedMod} ]]}}">
+        <button type='roll' value="@{SublightSpeedRoll}" name='roll_SublightSpeed'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-vehicle-attributes'>Maneuverability</label>
         <input type="number" name='attr_Maneuverability' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_ManeuverabilityMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Maneuverability}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ManeuverabilityMod}' name='roll_Maneuverability'></button><br/>
+        <input  type="hidden" name="attr_ManeuverabilityRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Maneuverability}} {{roll_value= [[ [[@{Maneuverability}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ManeuverabilityMod} ]]}}">
+        <button type='roll' value="@{ManeuverabilityRoll}" name='roll_Maneuverability'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-vehicle-attributes'>Hull</label>
         <input type="number" name='attr_Hull' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_HullMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Hull}-?{Penalty?|0|1|2|3|4|5}]]d6+@{HullMod}' name='roll_Hull'></button><br/>
+        <input  type="hidden" name="attr_HullRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Hull}} {{roll_value= [[ [[@{Hull}-?{Penalty?|0|1|2|3|4|5}]]d6+@{HullMod} ]]}}">
+        <button type='roll' value="@{HullRoll}" name='roll_Hull'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-vehicle-attributes'>Shields</label>
         <input type="number" name='attr_Shields' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_ShieldsMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll [[@{Shields}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ShieldsMod}' name='roll_Shields'></button><br/>
+        <input  type="hidden" name="attr_ShieldsRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Shields}} {{roll_value= [[ [[@{Shields}-?{Penalty?|0|1|2|3|4|5}]]d6+@{ShieldsMod} ]]}}">
+        <button type='roll' value="@{ShieldsRoll}" name='roll_Shields'></button><br/>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <div style="text-align: center;">
@@ -524,13 +579,15 @@
         <input type="number" name='attr_VehicleWeapon1FireControl' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_VehicleWeapon1FireControlMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll @{VehicleWeapon1FireControl}d6+@{VehicleWeapon1FireControlMod}' name='roll_VehicleWeapon1FireControl'></button>
+        <input  type="hidden" name="attr_VehicleWeapon1FireControlRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Fire Control}} {{weapon_name= @{VehicleWeapon1Name}}} {{roll_value= [[ [[@{VehicleWeapon1FireControl}-?{Penalty?|0|1|2|3|4|5}]]d6+@{VehicleWeapon1FireControlMod} + [[@{StarshipGunnery}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipGunneryMod} ]]}}">
+        <button type='roll' value="@{VehicleWeapon1FireControlRoll}" name='roll_VehicleWeapon1FireControl'></button>
         <br  style="margin-bottom: 10px;"/>
         <label class='sheet-vehicle-attributes'>Damage</label>
         <input type="number" name='attr_VehicleWeapon1Damage' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_VehicleWeapon1DamageMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll @{VehicleWeapon1Damage}d6+@{VehicleWeapon1DamageMod}' name='roll_VehicleWeapon1Damage'></button><br/>
+        <input  type="hidden" name="attr_VehicleWeapon1DamageRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{weapon_name= @{VehicleWeapon1Name}}} {{damage= [[ @{VehicleWeapon1Damage}d6+@{VehicleWeapon1DamageMod} ]]}}">
+        <button type='roll' value="@{VehicleWeapon1DamageRoll}" name='roll_VehicleWeapon1Damage'></button>
         <hr style="margin-top: 3px; margin-bottom: 10px;">
 
         <label class='sheet-vehicle-weapon-order'>2.</label>
@@ -540,13 +597,15 @@
         <input type="number" name='attr_VehicleWeapon2FireControl' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_VehicleWeapon2FireControlMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll @{VehicleWeapon2FireControl}d6+@{VehicleWeapon2FireControlMod}' name='roll_VehicleWeapon2FireControl'></button>
+        <input  type="hidden" name="attr_VehicleWeapon2FireControlRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Fire Control}} {{weapon_name= @{VehicleWeapon2Name}}} {{roll_value= [[ [[@{VehicleWeapon2FireControl}-?{Penalty?|0|1|2|3|4|5}]]d6+@{VehicleWeapon2FireControlMod} + [[@{StarshipGunnery}-?{Penalty?|0|1|2|3|4|5}]]d6+@{StarshipGunneryMod} ]]}}">
+        <button type='roll' value="@{VehicleWeapon1FireControlRoll}" name='roll_VehicleWeapon1FireControl'></button>
         <br  style="margin-bottom: 10px;"/>
         <label class='sheet-vehicle-attributes'>Damage</label>
         <input type="number" name='attr_VehicleWeapon2Damage' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
         <label class='sheet-plus'>+</label>
         <input type="number" name='attr_VehicleWeapon2DamageMod' class='sheet-input-short' value="0">
-        <button type='roll' value='/roll @{VehicleWeapon2Damage}d6+@{VehicleWeapon2DamageMod}' name='roll_VehicleWeapon2Damage'></button><br/>
+        <input  type="hidden" name="attr_VehicleWeapon2DamageRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{weapon_name= @{VehicleWeapon2Name}}} {{damage= [[ @{VehicleWeapon2Damage}d6+@{VehicleWeapon2DamageMod}]]}}">
+        <button type='roll' value="@{VehicleWeapon2DamageRoll}" name='roll_VehicleWeapon2Damage'></button><br/>
       </div>
 
       <div class='sheet-col'>
@@ -564,7 +623,8 @@
           <input type="number" name='attr_WeaponDamage' class='sheet-input-short' value="0"><strong class='dee'>D</strong>
           <label class='sheet-plus'>+</label>
           <input type="number" name='attr_WeaponDamageMod' class='sheet-input-short' value="0">
-          <button type='roll' value='/roll @{WeaponDmg}d6+@{WeaponDmgMod}' name='roll_WeaponDamage'></button><br/>
+          <input  type="hidden" name="attr_WeaponDamageRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s weapon damage }} {{weapon_name= @{WeaponName}}} {{weapon_range= Short @{WeaponRangeShort}, Medium @{WeaponRangeMedium}, Long @{WeaponRangeLong}}} {{damage= [[@{WeaponDamage}d6+@{WeaponDamageMod}]] }}">
+          <button type='roll' value="@{WeaponDamageRoll}" name='roll_WeaponDamage'></button><br/>
           <hr style="margin-top: 3px; margin-bottom: 10px;">
         </fieldset>
       </div>
@@ -588,7 +648,8 @@
 
         <div style="text-align: center;">
           <h4 style="margin-bottom: 10px;display: inline-block;">Protection Roll</h4>
-          <button type='roll' value='/roll @{Strength}d6+@{StrengthMod}+@{Armor1}d6+@{Armor1Mod}+@{Armor2}d6+@{Armor2Mod}' name='roll_Protection'></button>
+          <input  type="hidden" name="attr_ProtectionRoll" value="&{template:swd6roll} {{roll_name= @{Name}'s skill check }} {{skill= Protection Roll}} {{roll_value= [[ @{Strength}d6+@{StrengthMod}+@{Armor1}d6+@{Armor1Mod}+@{Armor2}d6+@{Armor2Mod} ]]}}">
+          <button type='roll' value="@{ProtectionRoll}" name='roll_Protection'></button>
         </div>
       </div>
   </div>
@@ -615,6 +676,51 @@
       </div>
     </div>
   </div>
+</div>
+
+<!--ROLL TEMPLATES-->
+<div class="rolltemplates">
+  <rolltemplate class="sheet-rolltemplate-swd6roll">
+    <table>
+      <tr>
+        <th>
+          {{#roll_name}}
+            {{roll_name}}
+          {{/roll_name}}
+        </th>
+      </tr>
+      {{#skill}}
+        <tr>
+            <td class="tcat">{{skill}} Skill</td>
+        </tr>
+      {{/skill}}
+      {{#vehicle_action}}
+        <tr>
+            <td class="tcat">Action: {{vehicle_action}}</td>
+        </tr>
+      {{/vehicle_action}}
+      {{#weapon_name}}
+        <tr>
+            <td class="tcat">Weapon: {{weapon_name}}</td>
+        </tr>
+      {{/weapon_name}}
+      {{#roll_value}}
+        <tr>
+            <td class="tcat">Rolled: {{roll_value}}</td>
+        </tr>
+      {{/roll_value}}
+      {{#weapon_range}}
+        <tr>
+            <td class="tcat">Range: {{weapon_range}}</td>
+        </tr>
+      {{/weapon_range}}
+      {{#damage}}
+        <tr>
+            <td class="tcat">Damage: {{damage}}</td>
+        </tr>
+      {{/damage}}
+    </table>
+  </rolltemplate>
 </div>
 
 <script type="text/worker">
@@ -889,7 +995,7 @@
       Maneuverability: [3, 0],
       Hull: [4, 0],
       Shields: [1, 0],
-      VehicleWeapon1Name: "Laser Cannon (x4, sync)",
+      VehicleWeapon1Name: "Laser Cannon x4",
       VehicleWeapon1FireControl: [3, 0],
       VehicleWeapon1Damage: [6, 0],
       VehicleWeapon2Name: "Proton Torpedo",
@@ -915,7 +1021,7 @@
       Maneuverability: [2, 0],
       Hull: [2, 0],
       Shields: [0, 0],
-      VehicleWeapon1Name: "Laser Cannon (x2, sync)",
+      VehicleWeapon1Name: "Laser Cannon x2",
       VehicleWeapon1FireControl: [2, 0],
       VehicleWeapon1Damage: [5, 0],
       VehicleWeapon2Name: "",
@@ -941,7 +1047,7 @@
       Maneuverability: [1, 0],
       Hull: [5, 0],
       Shields: [3, 0],
-      VehicleWeapon1Name: "Laser Cannon (x4)",
+      VehicleWeapon1Name: "Laser Cannon x4",
       VehicleWeapon1FireControl: [2, 0],
       VehicleWeapon1Damage: [5, 0],
       VehicleWeapon2Name: "Proton Torpedo",
