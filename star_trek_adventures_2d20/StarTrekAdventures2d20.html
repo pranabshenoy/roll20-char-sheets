@@ -172,7 +172,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="attributecontainer">                        
+                        <div class="attributecontainer">
                             <span class="label" style="width: 80px;">CREW BONUS</span><input type="text" name="attr_crew_bonus" value="0" maxlength="2"/>
                         </div>
                     </div>
@@ -498,16 +498,19 @@
                 <div class='attributes'>
                     <div class="sectionheader">
                         <span class="label">SYSTEMS</span>
+                        <input type="hidden" name="attr_ship_breaches" value="&{template:lcars}{{roll_name=@{character_name}}}{{subhead=Ship Breaches}}{{engines_breach=@{engine_breach}}}{{computer_breach=@{computer_breach}}}{{weapons_breach=@{weapons_breach}}}{{structure_breach=@{structure_breach}}}{{sensors_breach=@{sensors_breach}}}{{communications_breach=@{communications_breach}}}" />
                     </div>
                     <div class="sheet-row">
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_engines' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Engines Task}}{{attr=Ship Engines}}{{attr_num=@{ship_engines}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_engines}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_engines}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_engines}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_engines}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engines}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engines}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_engines}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_engines})-d20cf>@{cr}cs<1+1e-2)/((@{ship_engines})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_engines_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Engines Task}}{{attr=Ship Engines}}{{attr_num=@{ship_engines}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_engines}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_engines}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_engines}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_engines}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engines}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engines}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_engines}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_engines' value="@{ship_engines_task}">
 						        <span>ENGINES</span>
                                 </button>
                                 <input name="attr_ship_engines" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_engine_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_engine_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_engine_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_engine_breach_3"/><span></span>
@@ -519,12 +522,14 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_computers' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Computers Task}}{{attr=Ship Computers}}{{attr_num=@{ship_computers}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_computers}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_computers}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_computers}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_computers}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_computers}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_computers}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_computers}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_computers})-d20cf>@{cr}cs<1+1e-2)/((@{ship_computers})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_computer_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Computers Task}}{{attr=Ship Computers}}{{attr_num=@{ship_computers}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_computers}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_computers}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_computers}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_computers}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_computers}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_computers}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_computers}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_computers' value="@{ship_computer_task}">
                                     <span>COMPUTERS</span>
                                 </button>
                                 <input name="attr_ship_computers" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_computer_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_computer_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_computer_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_computer_breach_3"/><span></span>
@@ -536,12 +541,14 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_weapons' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Weapons Task}}{{attr=Ship Weapons}}{{attr_num=@{ship_weapons}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_weapons}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_weapons}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_weapons}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_weapons}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_weapons}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_weapons}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_weapons}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_weapons})-d20cf>@{cr}cs<1+1e-2)/((@{ship_weapons})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_weapons_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Weapons Task}}{{attr=Ship Weapons}}{{attr_num=@{ship_weapons}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_weapons}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_weapons}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_weapons}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_weapons}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_weapons}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_weapons}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_weapons}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_weapons' value="@{ship_weapons_task}">
                                     <span>WEAPONS</span>
                                 </button>
                                 <input name="attr_ship_weapons" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_weapons_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_weapons_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_weapons_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_weapons_breach_3"/><span></span>
@@ -555,12 +562,14 @@
                     <div class="sheet-row" style="margin-top: 10px">
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_structure' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Structure Task}}{{attr=Ship Structure}}{{attr_num=@{ship_structure}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_structure}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_structure}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_structure}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_structure}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_structure}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_structure}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_structure}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_structure})-d20cf>@{cr}cs<1+1e-2)/((@{ship_structure})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_structure_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Structure Task}}{{attr=Ship Structure}}{{attr_num=@{ship_structure}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_structure}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_structure}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_structure}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_structure}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_structure}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_structure}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_structure}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_structure' value="@{ship_structure_task}">
                                 <span>STRUCTURE</span>
                                 </button>
                                 <input name="attr_ship_structure" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_structure_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_structure_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_structure_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_structure_breach_3"/><span></span>
@@ -572,12 +581,14 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_sensors' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Sensors Task}}{{attr=Ship Sensors}}{{attr_num=@{ship_sensors}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_sensors}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_sensors}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_sensors}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_sensors}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_sensors}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_sensors}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_sensors}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_sensors})-d20cf>@{cr}cs<1+1e-2)/((@{ship_sensors})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_sensors_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Sensors Task}}{{attr=Ship Sensors}}{{attr_num=@{ship_sensors}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_sensors}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_sensors}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_sensors}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_sensors}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_sensors}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_sensors}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_sensors}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_sensors' value="@{ship_sensors_task}">
                                     <span>SENSORS</span>
                                 </button>
                                 <input name="attr_ship_sensors" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_sensors_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_sensors_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_sensors_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_sensors_breach_3"/><span></span>
@@ -589,12 +600,14 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_communications' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Comms Task}}{{attr=Ship Comms}}{{attr_num=@{ship_comms}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_comms}+@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_comms}+@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_comms}+@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_comms}+@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_comms}+@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_comms}+@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_comms}+@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_comms})-d20cf>@{cr}cs<1+1e-2)/((@{ship_comms})-1))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_communications_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Comms Task}}{{attr=Ship Comms}}{{attr_num=@{ship_comms}}}?{Ship Department|Ship Command,{{discp=Ship Command&amp;#125;&amp;#125;{{discp_num=@{ship_command}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_command})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_comms}+@{ship_command})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Security,{{discp=Ship Security&amp;#125;&amp;#125;{{discp_num=@{ship_security}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_comms}+@{ship_security})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Science,{{discp=Ship Science&amp;#125;&amp;#125;{{discp_num=@{ship_science}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_science})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_comms}+@{ship_science})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Conn,{{discp=Ship Conn&amp;#125;&amp;#125;{{discp_num=@{ship_conn}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_conn})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_comms}+@{ship_conn})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engineering,{{discp=Ship Engineering&amp;#125;&amp;#125;{{discp_num=@{ship_engineering}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_engineering})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_comms}+@{ship_engineering})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Medicine,{{discp=Ship Medicine&amp;#125;&amp;#125;{{discp_num=@{ship_medicine}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_comms}+@{ship_medicine})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_comms}+@{ship_medicine})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_communications' value="@{ship_communications_task}">
                                     <span>COMMS</span>
                                 </button>
                                 <input name="attr_ship_comms" type="text"  value="1" maxlength="2"/>
                                 <div class="breaches">
                                     <span class=label>BREACHES</span>
+                                    <input type="hidden" name="attr_communications_breach" value="0" maxlength="2"/>
                                     <input type="checkbox" name="attr_communications_breach_1"/><span></span>
                                     <input type="checkbox" name="attr_communications_breach_2"/><span></span>
                                     <input type="checkbox" name="attr_communications_breach_3"/><span></span>
@@ -618,7 +631,8 @@
                     <div class="sheet-row" style="margin-top: 10px">
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_command' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Command Task}}{{discp=Ship Command}}{{discp_num=@{ship_command}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_comms})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_engines})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_structure})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_computers})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_sensors})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command}+@{ship_weapons})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_command})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_command})-1&amp;#124;Yes&amp;#44;@{ship_command}+1e-2)/((@{ship_command})-@{ship_command}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_command_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Command Task}}{{discp=Ship Command}}{{discp_num=@{ship_command}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_comms})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_comms})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_engines})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_engines})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_structure})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_structure})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_computers})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_computers})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_sensors})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_command}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_command}+1e-2)/((@{ship_command}+@{ship_weapons})-@{ship_command}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_ship_command' value="@{ship_command_task}">
                                     <span>COMMAND</span>
                                 </button>
                                 <input name="attr_ship_command" type="text"  value="0" maxlength="2"/>
@@ -626,7 +640,8 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_security' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Security Task}}{{discp=Ship Security}}{{discp_num=@{ship_security}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_comms})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_engines})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_structure})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_computers})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_sensors})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security}+@{ship_weapons})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_security})-1&amp;#124;Yes&amp;#44;@{ship_security}+1e-2)/((@{ship_security})-@{ship_security}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_security_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Security Task}}{{discp=Ship Security}}{{discp_num=@{ship_security}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_comms})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_comms})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_engines})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_engines})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_structure})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_structure})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_computers})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_computers})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_sensors})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_security}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_security}+@{ship_weapons})-@{ship_security}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <button type='roll' name='roll_ship_security' value="@{ship_security_task}">
                                 <span>SECURITY</span>
                                 </button>
                                 <input name="attr_ship_security" type="text"  value="0" maxlength="2"/>
@@ -634,7 +649,8 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_science' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Science Task}}{{discp=Ship Science}}{{discp_num=@{ship_science}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_comms})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_engines})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_structure})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_computers})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_sensors})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science}+@{ship_weapons})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_science})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_science})-1&amp;#124;Yes&amp;#44;@{ship_science}+1e-2)/((@{ship_science})-@{ship_science}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_science_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Science Task}}{{discp=Ship Science}}{{discp_num=@{ship_science}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_comms})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_comms})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_engines})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_engines})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_structure})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_structure})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_computers})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_computers})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_sensors})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_science}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_science}+1e-2)/((@{ship_science}+@{ship_weapons})-@{ship_science}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_ship_science' value="@{ship_science_task}">
                                     <span>SCIENCE</span>
                                 </button>
                                 <input name="attr_ship_science" type="text"  value="0" maxlength="2"/>
@@ -644,7 +660,8 @@
                     <div class="sheet-row" style="margin-top: 10px;">
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_conn' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Conn Task}}{{discp=Ship Conn}}{{discp_num=@{ship_conn}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_comms})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_engines})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_structure})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_computers})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_sensors})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_weapons})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_conn})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_conn})-1&amp;#124;Yes&amp;#44;@{ship_conn}+1e-2)/((@{ship_conn})-@{ship_conn}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_conn_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Conn Task}}{{discp=Ship Conn}}{{discp_num=@{ship_conn}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_comms})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_comms})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_engines})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_engines})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_structure})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_structure})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_computers})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_computers})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_sensors})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_conn}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_conn}+1e-2)/((@{ship_conn}+@{ship_weapons})-@{ship_conn}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_ship_conn' value="@{ship_conn_task}">
                                     <span>CONN</span>
                                 </button>
                                 <input name="attr_ship_conn" type="text"  value="0" maxlength="2"/>
@@ -652,7 +669,8 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_engineering' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Engineering Task}}{{discp=Ship Engineering}}{{discp_num=@{ship_engineering}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_comms})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_engines})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_structure})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_computers})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_sensors})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_weapons})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_engineering})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_engineering})-1&amp;#124;Yes&amp;#44;@{ship_engineering}+1e-2)/((@{ship_engineering})-@{ship_engineering}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_engineering_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Engineering Task}}{{discp=Ship Engineering}}{{discp_num=@{ship_engineering}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_comms})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_comms})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_engines})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_engines})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_structure})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_structure})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_computers})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_computers})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_sensors})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_engineering}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_engineering}+1e-2)/((@{ship_engineering}+@{ship_weapons})-@{ship_engineering}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_ship_engineering' value="@{ship_engineering_task}">
                                     <span>ENGINEERING</span>
                                 </button>
                                 <input name="attr_ship_engineering" type="text"  value="0" maxlength="2"/>
@@ -660,7 +678,8 @@
                         </div>
                         <div class="sheet-col">
                             <div class="attributecontainer">
-                                <button type='roll' name='roll_ship_medicine' value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Medicine Task}}{{discp=Ship Medicine}}{{discp_num=@{ship_medicine}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_comms})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_comms})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_comms})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_engines})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_engines})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_engines})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_structure})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_structure})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_structure})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_computers})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_computers})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_computers})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_sensors})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_sensors})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_sensors})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_weapons})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine}+@{ship_weapons})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_weapons})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|None,{{result=[[{{ceil(((@{ship_medicine})-d20cf>@{cr}cs<?{Applicable Focus&amp;#124;No&amp;#44;1+1e-2)/((@{ship_medicine})-1&amp;#124;Yes&amp;#44;@{ship_medicine}+1e-2)/((@{ship_medicine})-@{ship_medicine}&amp;#125;))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}">
+                                <input type="hidden" name="attr_ship_medicine_task" value="&{template:lcars}{{roll_name=@{character_name}'s}}{{subhead=Ship Medicine Task}}{{discp=Ship Medicine}}{{discp_num=@{ship_medicine}}}?{Ship System|Ship Comms,{{attr=Ship Comms&amp;#125;&amp;#125;{{attr_num=@{ship_comms}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_comms})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_comms})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Engines,{{attr=Ship Engines&amp;#125;&amp;#125;{{attr_num=@{ship_engines}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_engines})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_engines})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Structure,{{attr=Ship Structure&amp;#125;&amp;#125;{{attr_num=@{ship_structure}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_structure})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_structure})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Computers,{{attr=Ship Computers&amp;#125;&amp;#125;{{attr_num=@{ship_computers}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_computers})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_computers})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Sensors,{{attr=Ship Sensors&amp;#125;&amp;#125;{{attr_num=@{ship_sensors}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_sensors})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_sensors})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;|Ship Weapons,{{attr=Ship Weapons&amp;#125;&amp;#125;{{attr_num=@{ship_weapons}&amp;#125;&amp;#125;{{result=[[{{ceil(((@{ship_medicine}+@{ship_weapons})-d20cf>@{cr}cs<@{ship_medicine}+1e-2)/((@{ship_medicine}+@{ship_weapons})-@{ship_medicine}))&amp;#44;{2&amp;#125;&amp;#125;kl1&amp;#44;{0&amp;#125;&amp;#125;kh1]]&amp;#125;&amp;#125;}" />
+                                <button type='roll' name='roll_ship_medicine' value="@{ship_medicine_task}">
                                     <span>MEDICINE</span>
                                 </button>
                                 <input name="attr_ship_medicine" type="text"  value="0" maxlength="2"/>
@@ -672,6 +691,7 @@
                     <div class="sectionheader">
                         <span class="label">TALENTS</span>
                     </div>
+                    <input type="hidden" name="attr_ship_talents_display" value="&{template:lcars}{{roll_name=@{character_name}'s Talents}}{{talent_text=@{ship_talents}}}">
                     <textarea name="attr_ship_talents"></textarea>
                 </div>
             </div>
@@ -809,7 +829,8 @@
                                 <span class="label">NAME/TYPE</span><input name="attr_weapname" type="text" style="width: 347px"/>
                             </div>
                             <div class="weaponscontainer">
-                                <button type="roll" name="roll_weapon" value="&{template:lcars}{{roll_name=@{character_name}'s Attack}}{{subhead=@{weapname}}}{{weapq=@{weaponqualities}}}{{attr=Ship Weapons}}{{attr_num=@{ship_weapons}}}{{discp_dmgbtn=[Roll Damage](!&#13;/r @{weapval}t[Challenge-Dice])}}{{discp=Ship Security}}{{discp_num=@{ship_security}}}{{result=[[{{ceil(((@{ship_weapons}+@{ship_security})-d20cf>@{cr}cs<?{Applicable Focus|No,1+1e-2)/((@{ship_weapons}+@{ship_security})-1|Yes,@{ship_security}+1e-2)/((@{ship_weapons}+@{ship_security})-@{ship_security}})),{2}}kl1,{0}}kh1]]}}">
+                                <input type="hidden" name="attr_ship_weapon_roll" value="&{template:lcars}{{roll_name=@{character_name}'s Attack}}{{subhead=@{weapname}}}{{weapq=@{weaponqualities}}}{{attr=Ship Weapons}}{{attr_num=@{ship_weapons}}}{{discp_dmgbtn=[Roll Damage](!&#13;/r @{weapval}t[Challenge-Dice])}}{{discp_locbtn=[Roll Location](!&#13;/r 1t[Ship-Damage-Location])}}{{discp=Ship Security}}{{discp_num=@{ship_security}}}{{result=[[{{ceil(((@{ship_weapons}+@{ship_security})-d20cf>@{cr}cs<@{ship_security}+1e-2)/((@{ship_weapons}+@{ship_security})-@{ship_security})),{2}}kl1,{0}}kh1]]}}" />
+                                <button type="roll" name="roll_weapon" value="@{ship_weapon_roll}">
                                 <image src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Star Trek Adventures 2d20/logosmall.png"/>
                                 </button>
                                 <input name="attr_weapval" type="text" maxlength="2" style="width: 40px" title="Phaser: Ship Security + Ship Scale + Additional Factors of Weapon&#10;Torpedos: Torpedo Basic Damage + Ship Security"/>
@@ -856,27 +877,32 @@
             {{/discp}}
             {{#focus}}
             <tr>
-                <td class="discp">Focus: {{focus}}</td>        
+                <td class="discp">Focus: {{focus}}</td>
             </tr>
             {{/focus}}
             {{#result}}
             <tr>
-                <td class="result">Successes:<br/>{{result}}</td>        
+                <td class="result">Successes:<br/>{{result}}</td>
             </tr>
             {{/result}}
 			{{#discp_dmgbtn}}
             <tr>
-                <td class="discp_dmgbtn">{{discp_dmgbtn}}</td>        
+                <td class="discp_dmgbtn">{{discp_dmgbtn}}</td>
             </tr>
             {{/discp_dmgbtn}}
+            {{#discp_locbtn}}
+            <tr>
+                <td class="discp_dmgbtn">{{discp_locbtn}}</td>
+            </tr>
+            {{/discp_locbtn}}
             {{#discp_dmg}}
             <tr>
-                <td class="discp_dmg">Damage: {{discp_dmg}}</td>        
+                <td class="discp_dmg">Damage: {{discp_dmg}}</td>
             </tr>
             {{/discp_dmg}}
 			{{#weapq}}
             <tr>
-                <td class="weapq">{{weapq}}</td>        
+                <td class="weapq">{{weapq}}</td>
             </tr>
             {{/weapq}}
             {{#talent_text}}
@@ -889,6 +915,36 @@
                 <td class="focus_text">{{focus_text}}</td>
             </tr>
             {{/focus_text}}
+            {{#engines_breach}}
+            <tr>
+                <td class="discp">Engines: {{engines_breach}}</td>
+            </tr>
+            {{/engines_breach}}
+            {{#computer_breach}}
+            <tr>
+                <td class="discp">Computer: {{computer_breach}}</td>
+            </tr>
+            {{/computer_breach}}
+            {{#weapons_breach}}
+            <tr>
+                <td class="discp">Weapons: {{weapons_breach}}</td>
+            </tr>
+            {{/weapons_breach}}
+            {{#structure_breach}}
+            <tr>
+                <td class="discp">Structure: {{structure_breach}}</td>
+            </tr>
+            {{/structure_breach}}
+            {{#sensors_breach}}
+            <tr>
+                <td class="discp">Sensors: {{sensors_breach}}</td>
+            </tr>
+            {{/sensors_breach}}
+            {{#communications_breach}}
+            <tr>
+                <td class="discp">Communication: {{communications_breach}}</td>
+            </tr>
+            {{/communications_breach}}
         </table>
     </rolltemplate>
 </div>
@@ -900,7 +956,7 @@
         versioning();
         fixattr();
     });
-    
+
     on("change:show_settings change:show_settings_max", function () {
         getAttrs(["show_settings"], function (v) {
             if (v.show_settings === "on") {
@@ -910,15 +966,15 @@
             }
         });
     });
-   
+
     on("change:stress_max change:fitness change:security change:stress_bonus", function () {
         configure_stress();
     });
-    
+
     on("change:shields_max change:ship_security change:ship_structure change:shields_bonus", function () {
         configure_shields();
     });
-    
+
     on("change:stress_1 change:stress_2 change:stress_3 change:stress_4 change:stress_5 change:stress_6 change:stress_7 change:stress_8 change:stress_9 change:stress_10 change:stress_11 change:stress_12 change:stress_13 change:stress_14 change:stress_15 change:stress_16 change:stress_17 change:stress_18 change:stress_19 change:stress_20 change:stress_21 change:stress_22 change:stress_23 change:stress_24", function () {
         count_stress();
     });
@@ -930,7 +986,31 @@
     on("change:shields_1 change:shields_2 change:shields_3 change:shields_4 change:shields_5 change:shields_6 change:shields_7 change:shields_8 change:shields_9 change:shields_10 change:shields_11 change:shields_12 change:shields_13 change:shields_14 change:shields_15 change:shields_16 change:shields_17 change:shields_18 change:shields_19 change:shields_20 change:shields_21 change:shields_22 change:shields_23 change:shields_24", function () {
         count_shields();
     });
-    
+
+    on("change:engine_breach_1 change:engine_breach_2 change:engine_breach_3 change:engine_breach_4 change:engine_breach_5 change:engine_breach_6", function () {
+        count_engine_breach();
+    });
+
+    on("change:computer_breach_1 change:computer_breach_2 change:computer_breach_3 change:computer_breach_4 change:computer_breach_5 change:computer_breach_6", function () {
+        count_computer_breach();
+    });
+
+    on("change:weapons_breach_1 change:weapons_breach_2 change:weapons_breach_3 change:weapons_breach_4 change:weapons_breach_5 change:weapons_breach_6", function () {
+        count_weapons_breach();
+    });
+
+    on("change:structure_breach_1 change:structure_breach_2 change:structure_breach_3 change:structure_breach_4 change:structure_breach_5 change:structure_breach_6", function () {
+        count_structure_breach();
+    });
+
+    on("change:sensors_breach_1 change:sensors_breach_2 change:sensors_breach_3 change:sensors_breach_4 change:sensors_breach_5 change:sensors_breach_6", function () {
+        count_sensors_breach();
+    });
+
+    on("change:communications_breach_1 change:communications_breach_2 change:communications_breach_3 change:communications_breach_4 change:communications_breach_5 change:communications_breach_6", function () {
+        count_communications_breach();
+    });
+
     on("change:stress" , function () {
         update_stress();
     });
@@ -942,7 +1022,31 @@
     on("change:shields", function () {
         update_shields();
     });
-    
+
+    on("change:engine_breach", function () {
+        update_engine_breach();
+    });
+
+    on("change:computer_breach", function () {
+        update_computer_breach();
+    });
+
+    on("change:weapons_breach", function () {
+        update_weapons_breach();
+    });
+
+    on("change:structure_breach", function () {
+        update_structure_breach();
+    });
+
+    on("change:sensors_breach", function () {
+        update_sensors_breach();
+    });
+
+    on("change:communications_breach", function () {
+        update_communications_breach();
+    });
+
     on("change:header_text", function () {
         getAttrs(["header_text"], function (v) {
             if (v.header_text && v.header_text === "starship") {
@@ -960,8 +1064,7 @@
             }
         });
     });
-	
-   
+
     // A Fix for Previous Numerical Values that didn't create right in v1.1
     var fixattr = function () {
         getAttrs(["control", "fitness", "presence", "daring", "insight", "reason", "command", "security", "science", "conn", "engineering", "medicine", "ship_engines", "ship_computers", "ship_weapons", "ship_structure", "ship_sensors", "ship_comms", "ship_scale", "ship_command", "ship_security", "ship_science", "ship_conn", "ship_engineering", "ship_medicine"], function (v) {
@@ -1044,29 +1147,27 @@
     };
 
     var configure_stress = function () {
-    
         getAttrs(["fitness", "security", "stress_bonus"], function (v) {
             var attrs = {};
             var fit = parseInt(v.fitness) || 0;
             var sec = parseInt(v.security) || 0;
             var bon = parseInt(v.stress_bonus) || 0;
             var tot = fit + sec + bon;
-    
+
             for (i = 1; i <= tot; i += 1) {
                 attrs["stress_".concat(i, "_enabled")] = "true";
             }
-    
+
             for (i = tot + 1; i <= 24; i += 1) {
                 attrs["stress_".concat(i)] = 0;
                 attrs["stress_".concat(i, "_enabled")] = "false";
             }
-    
+
             setAttrs(attrs);
         });
     };
-    
+
     var configure_shields = function () {
-    
         getAttrs(["ship_structure", "ship_security", "shields_bonus"], function (v) {
             var attrs = {};
             var str = parseInt(v.ship_structure) || 0;
@@ -1083,7 +1184,7 @@
             setAttrs(attrs);
         });
     };
-    
+
     var do_checkbox_count = function (checkboxen) {
         var total = 0;
         Object.keys(checkboxen).forEach(function (key) {
@@ -1093,7 +1194,7 @@
         });
         return total;
     };
-    
+
     var get_attr_list = function (attr_name, attr_count) {
         var attr_list = [];
         for (i = 0; i <= attr_count; i+=1) {
@@ -1101,7 +1202,7 @@
         }
         return attr_list;
     };
-    
+
     var count_stress = function() {
         getAttrs(get_attr_list("stress", 24), function(v) {
             setAttrs({"stress": do_checkbox_count(v)});
@@ -1119,7 +1220,43 @@
             setAttrs({"shields": do_checkbox_count(v)});
         });
     };
-    
+
+    var count_engine_breach = function() {
+        getAttrs(get_attr_list("engine_breach", 6), function(v) {
+            setAttrs({"engine_breach": do_checkbox_count(v)});
+        });
+    };
+
+    var count_computer_breach = function() {
+        getAttrs(get_attr_list("computer_breach", 6), function(v) {
+            setAttrs({"computer_breach": do_checkbox_count(v)});
+        });
+    };
+
+    var count_weapons_breach = function() {
+        getAttrs(get_attr_list("weapons_breach", 6), function(v) {
+            setAttrs({"weapons_breach": do_checkbox_count(v)});
+        });
+    };
+
+    var count_structure_breach = function() {
+        getAttrs(get_attr_list("structure_breach", 6), function(v) {
+            setAttrs({"structure_breach": do_checkbox_count(v)});
+        });
+    };
+
+    var count_sensors_breach = function() {
+        getAttrs(get_attr_list("sensors_breach", 6), function(v) {
+            setAttrs({"sensors_breach": do_checkbox_count(v)});
+        });
+    };
+
+    var count_communications_breach = function() {
+        getAttrs(get_attr_list("communications_breach", 6), function(v) {
+            setAttrs({"communications_breach": do_checkbox_count(v)});
+        });
+    };
+
     var update_stress = function () {
         var attr_list = ["stress"];
         attr_list = attr_list.concat(get_attr_list("stress", 24));
@@ -1143,7 +1280,55 @@
             update_checkbox_things("shields", v);
         });
     };
-    
+
+    var update_engine_breach = function () {
+        var attr_list = ["engine_breach"];
+        attr_list = attr_list.concat(get_attr_list("engine_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("engine_breach", v);
+        });
+    };
+
+    var update_computer_breach = function () {
+        var attr_list = ["computer_breach"];
+        attr_list = attr_list.concat(get_attr_list("computer_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("computer_breach", v);
+        });
+    };
+
+    var update_weapons_breach = function () {
+        var attr_list = ["weapons_breach"];
+        attr_list = attr_list.concat(get_attr_list("weapons_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("weapons_breach", v);
+        });
+    };
+
+    var update_structure_breach = function () {
+        var attr_list = ["structure_breach"];
+        attr_list = attr_list.concat(get_attr_list("structure_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("structure_breach", v);
+        });
+    };
+
+    var update_sensors_breach = function () {
+        var attr_list = ["sensors_breach"];
+        attr_list = attr_list.concat(get_attr_list("sensors_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("sensors_breach", v);
+        });
+    };
+
+    var update_communications_breach = function () {
+        var attr_list = ["communications_breach"];
+        attr_list = attr_list.concat(get_attr_list("communications_breach", 6));
+        getAttrs(attr_list, function (v) {
+            update_checkbox_things("communications_breach", v);
+        });
+    };
+
     var update_checkbox_things = function (skip_attr, v) {
         var newval = parseInt(v[skip_attr]);
         var curval = do_checkbox_count(v);
@@ -1188,7 +1373,7 @@
         }
         setAttrs(attrs);
     };
-    
+
     var versioning = function () {
         getAttrs(["version"], function (v) {
             console.log("CURRENT VERSION IS: ".concat(v.version));
@@ -1201,7 +1386,7 @@
             }
         });
     };
-    
+
     var update_to_1_1 = function () {
         console.log("UPDATING TO SHEET VERSION 1.1");
         configure_stress();
@@ -1215,7 +1400,7 @@
             console.log("Star Trek Adventures 2d20 version " + v.version);
         });
     };
-    
+
     var update_dyanamic_weapon = function (wep_name, wep_dr, wep_qual) {
         if (wep_name) {
             var newrowid= generateRowID();
@@ -1226,5 +1411,5 @@
             setAttrs(new_attrs);
         }
     };
-    
+
 </script>
