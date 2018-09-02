@@ -1,0 +1,106 @@
+<div class='sheet-2colrow'>
+  <div class='sheet-col'>
+    <b>Name</b> <Input type="text" name="attr_Name">
+    <br>
+    <b>Matrix</b>
+    <input type="hidden" name="attr_MatrixRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Matrix}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Matrix" value="1">
+    <button type='roll' value='@{MatrixRoll}' name='roll_Matrix'></button>
+    <br>
+    <br>
+    <b><u>SKILLS</u></b>
+    <input type="hidden" name="attr_SkillRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} ?{Which skill?|Kung Fu, {{skill= Kung Fu&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{KungFu}<@{KungFu} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Gun Fu, {{skill= Gun Fu&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{GunFu}<@{GunFu} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Hack, {{skill= Hack&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{Hack}<@{Hack} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Drive/Fly, {{skill= Drive/Fly&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{DriveFly}<@{DriveFly} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Throw, {{skill= Throw&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{Throw}<@{Throw} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Athletics, {{skill= Athletics&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{Athletics}<@{Athletics} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Leadership, {{skill= Leadership&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{Leadership}<@{Leadership} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; |Negotiate, {{skill= Negotiate&amp;#125;&amp;#125; {{skill_success= [[ 1d6cs<@{Negotiate}<@{Negotiate} ]]&amp;#125;&amp;#125; {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]&amp;#125;&amp;#125; }">
+    <br>
+    <b>Kung Fu</b>
+    <br>
+    <input type="hidden" name="attr_KungFuRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Kung Fu}} {{skill_success= [[ 1d6cs<@{KungFu}<@{KungFu} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_KungFu" value="3">
+    <button type='roll' value='@{KungFuRoll}' name='roll_KungFu'></button>
+    <br>
+    <b>Gun Fu</b>
+    <br>
+    <input type="hidden" name="attr_GunFuRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Gun Fu}} {{skill_success= [[ 1d6cs<@{GunFu}<@{GunFu} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_GunFu" value="3">
+    <button type='roll' value='@{GunFuRoll}' name='roll_GunFu'></button>
+    <br>
+    <b>Hack</b>
+    <br>
+    <input type="hidden" name="attr_HackRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Hack}} {{skill_success= [[ 1d6cs<@{Hack}<@{Hack} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Hack" value="3">
+    <button type='roll' value='@{HackRoll}' name='roll_Hack'></button>
+    <br>
+    <b>Drive/Fly</b>
+    <br>
+    <input type="hidden" name="attr_DriveFlyRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Drive/Fly}} {{skill_success= [[ 1d6cs<@{DriveFly}<@{DriveFly} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_DriveFly" value="3">
+    <button type='roll' value='@{DriveFlyRoll}' name='roll_DriveFly'></button>
+    <br>
+    <b>Throw</b>
+    <br>
+    <input type="hidden" name="attr_ThrowRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Throw}} {{skill_success= [[ 1d6cs<@{Throw}<@{Throw} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Throw" value="3">
+    <button type='roll' value='@{ThrowRoll}' name='roll_Throw'></button>
+    <br>
+    <b>Athletics</b>
+    <br>
+    <input type="hidden" name="attr_AthleticsRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Athletics}} {{skill_success= [[ 1d6cs<@{Athletics}<@{Athletics} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Athletics" value="3">
+    <button type='roll' value='@{AthleticsRoll}' name='roll_Athletics'></button>
+    <br>
+    <b>Leadership</b>
+    <br>
+    <input type="hidden" name="attr_LeadershipRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Leadership}} {{skill_success= [[ 1d6cs<@{Leadership}<@{Leadership} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Leadership" value="3">
+    <button type='roll' value='@{LeadershipRoll}' name='roll_Leadership'></button>
+    <br>
+    <b>Negotiate</b>
+    <br>
+    <input type="hidden" name="attr_NegotiateRoll" value="&{template:matrixroll} {{roll_name= @{Name}'s skill check }} {{skill= Negotiate}} {{skill_success= [[ 1d6cs<@{Negotiate}<@{Negotiate} ]]}} {{matrix_success= [[ 1d6cs<@{Matrix}<@{Matrix} ]]}}">
+    <input type="number" name="attr_Negotiate" value="3">
+    <button type='roll' value='@{NegotiateRoll}' name='roll_Negotiate'></button>
+    <br>
+  </div>
+  <div class='sheet-col'>
+    <b><u>Body Chips</u></b>
+    <input type="number" value="3" name="attr_BodyChips">/<input type="number" value="3" name="attr_BodyChipsMax">
+    <br>
+    <b><u>Matrix Chips</u></b><input type="number" value="1" name="attr_MatrixChips">
+    <br>
+    <br>
+    <b><u>Deal</u></b><textarea name="attr_Deal"></textarea>
+    <br>
+    <b><u>Fate</u></b><textarea name="attr_Fate"></textarea>
+    <br>
+    <b><u>Equipment</u></b><textarea name="attr_Equipment"></textarea>
+  </div>
+</div>
+
+<!--ROLL TEMPLATES-->
+<div class="rolltemplates">
+  <rolltemplate class="sheet-rolltemplate-matrixroll">
+    <table>
+      <tr>
+        <th>
+          {{#roll_name}}
+            {{roll_name}}
+          {{/roll_name}}
+        </th>
+      </tr>
+      {{#skill}}
+        <tr>
+            <td class="tcat">Skill: {{skill}}</td>
+        </tr>
+      {{/skill}}
+      {{#skill_success}}
+        <tr>
+            <td class="tcat">Skill Success: {{skill_success}}</td>
+        </tr>
+      {{/skill_success}}
+      {{#matrix_success}}
+        <tr>
+            <td class="tcat">Matrix Success: {{matrix_success}}</td>
+        </tr>
+      {{/matrix_success}}
+    </table>
+  </rolltemplate>
+</div>

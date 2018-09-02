@@ -1,0 +1,35 @@
+/* ==== Roll Template ==== */
+.sheet-rolltemplate-matrixroll table {
+  width: 100%;
+  border: 1px solid;
+  color: black;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.sheet-rolltemplate-matrixroll th {
+  background-color: rgba(112, 32, 130,1);
+  color: #ffffff;
+  padding: 2px;
+  border-bottom: 1px solid black;
+  line-height: 1.6em;
+  font-size: 1.2em;
+}
+
+.sheet-rolltemplate-matrixroll .sheet-tcat {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-matrixroll td {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-rolltemplate-matrixroll tr:nth-child(odd) {
+  background-color: rgba(217, 217, 214,1);
+}
+
+.sheet-rolltemplate-matrixroll tr:nth-child(even) {
+  background-color: rgba(233, 233, 233,1);
+}
+/* ==== Roll Template ==== */
